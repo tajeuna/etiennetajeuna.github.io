@@ -24,10 +24,10 @@ My research focuses on designing machine learning methods for complex evolving s
 
 ## Quick links
 
-- [Research](./research.html)
-- [Publications](./publications.html)
-- [Teaching](./teaching.html)
-- [Students](./students.html)
-- [Funding & Projects](./projects.html)
-- [CV](./cv.html)
-- [Contact](./contact.html)
+- [Research](./research.md)
+- [Publications](./publications.md)
+- [Teaching](./teaching.md)
+- [Students](./students.md)
+- [Funding & Projects](./projects.md)
+- [CV](./cv.md)
+- [Contact](./contact.md)
