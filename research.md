@@ -3,7 +3,7 @@ layout: page
 title: Research
 eyebrow: Research Program
 lead: My work lies at the intersection of machine learning, graph-based modeling, time series analysis, and interpretable AI.
-permalink: /research/
+permalink:     etiennetajeuna.github.io/research/
 ---
 
 My research investigates how contextual and structural dependencies can be modeled to support prediction and decision-making in complex, evolving environments. I develop principled methods that are both theoretically grounded and applicable to real-world problems in security, health, and social systems.
