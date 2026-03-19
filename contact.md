@@ -39,7 +39,7 @@ If you are writing to inquire about graduate supervision, please include:
 I read all applications carefully and will respond to strong matches as promptly as possible.---
 layout: page
 title: Contact
-permalink: /contact/
+permalink: etiennetajeuna.github.io/contact/
 ---
 
 ## Contact
