@@ -47,6 +47,6 @@ permalink: /contact/
 **Étienne Tajeuna**  
 Professor and Researcher in Computer Science  
 
-Email: your.email@uqo.ca
+Email: etiennegael.tajeuna@uqo.ca
 
 You may also connect with me through GitHub, LinkedIn, or Google Scholar.
