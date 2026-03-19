@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% if page.title and page.title != "Home" %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── RESET ──────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    /* ── DESIGN TOKENS ──────────────────────────────────── */
+    :root {
+      --bg:            #07090f;
+      --bg2:           #0c0f1a;
+      --surface:       #111420;
+      --surface2:      #171c2b;
+      --border:        #1e2438;
+      --border2:       #252d44;
+      --accent:        #c8963c;
+      --accent2:       #e2aa4a;
+      --accent-glow:   rgba(200,150,60,.18);
+      --accent-dim:    rgba(200,150,60,.08);
+      --text:          #ddd9d0;
+      --text-dim:      #9499b5;
+      --text-muted:    #585e7a;
+      --blue:          #5b9cf6;
+      --serif:         'Cormorant Garamond', Georgia, serif;
+      --sans:          'DM Sans', system-ui, sans-serif;
+      --mono:          'DM Mono', 'Courier New', monospace;
+      --nav-h:         64px;
+      --max-w:         1080px;
+      --px:            clamp(1.25rem, 4vw, 3rem);
+      --radius:        6px;
+    }
+
+    /* ── BASE ───────────────────────────────────────────── */
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    main { flex: 1; }
+
+    a { color: var(--accent2); text-decoration: none; transition: color .2s; }
+    a:hover { color: #fff; }
+    img { max-width: 100%; display: block; }
+
+    /* ── NAVIGATION ─────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      inset: 0 0 auto;
+      height: var(--nav-h);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      padding: 0 var(--px);
+      background: rgba(7,9,15,.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,.04);
+    }
+
+    .nav-brand {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 500;
+      letter-spacing: .05em;
+      color: var(--accent2);
+      margin-right: auto;
+      white-space: nowrap;
+    }
+    .nav-brand:hover { color: var(--accent2); }
+
+    .nav-links {
+      display: flex;
+      gap: clamp(1rem,2.5vw,2rem);
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: .75rem;
+      font-weight: 400;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      position: relative;
+      padding-bottom: 2px;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0; right: 0;
+      height: 1px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transition: transform .25s ease;
+      transform-origin: left;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    /* ── PAGE SHELL ─────────────────────────────────────── */
+    .page-wrap {
+      padding-top: calc(var(--nav-h) + 4rem);
+      padding-bottom: 7rem;
+      padding-left: var(--px);
+      padding-right: var(--px);
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+
+    /* ── PAGE HEADER ────────────────────────────────────── */
+    .page-hd {
+      margin-bottom: 3.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      animation: fadeUp .6s ease both;
+    }
+    .page-hd .eyebrow {
+      font-size: .72rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: .75rem;
+      display: block;
+    }
+    .page-hd h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem,5vw,3.8rem);
+      font-weight: 400;
+      line-height: 1.08;
+      color: #fff;
+      letter-spacing: -.01em;
+    }
+    .page-hd .lead {
+      margin-top: 1rem;
+      font-size: .95rem;
+      color: var(--text-dim);
+      max-width: 54ch;
+    }
+
+    /* ── PROSE CONTENT ──────────────────────────────────── */
+    .prose { animation: fadeUp .65s .1s ease both; }
+
+    .prose h2 {
+      font-family: var(--serif);
+      font-size: 1.9rem;
+      font-weight: 400;
+      color: #fff;
+      margin: 3rem 0 1.1rem;
+      padding-bottom: .6rem;
+      border-bottom: 1px solid var(--border);
+      letter-spacing: -.01em;
+    }
+    .prose h2:first-child { margin-top: 0; }
+
+    .prose h3 {
+      font-family: var(--serif);
+      font-size: 1.28rem;
+      font-weight: 500;
+      color: var(--accent2);
+      margin: 2.2rem 0 .7rem;
+      letter-spacing: .01em;
+    }
+
+    .prose p {
+      color: var(--text);
+      margin-bottom: 1.1rem;
+      font-size: .97rem;
+      line-height: 1.85;
+    }
+
+    .prose ul {
+      list-style: none;
+      margin-bottom: 1.4rem;
+    }
+    .prose ul li {
+      padding: .3rem 0 .3rem 1.75rem;
+      position: relative;
+      color: var(--text-dim);
+      font-size: .94rem;
+      line-height: 1.7;
+    }
+    .prose ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 300;
+    }
+
+    .prose ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1.4rem;
+    }
+    .prose ol li {
+      font-size: .94rem;
+      color: var(--text-dim);
+      padding: .2rem 0;
+      line-height: 1.7;
+    }
+
+    .prose strong { color: var(--text); font-weight: 500; }
+    .prose em { font-style: italic; color: var(--text-dim); }
+
+    .prose a { border-bottom: 1px solid rgba(226,170,74,.35); }
+    .prose a:hover { border-bottom-color: var(--accent2); }
+
+    .prose code {
+      font-family: var(--mono);
+      font-size: .85em;
+      background: var(--surface2);
+      padding: .1em .45em;
+      border-radius: 3px;
+      color: var(--accent2);
+    }
+
+    /* ── RESEARCH CARDS ─────────────────────────────────── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin: 1.5rem 0 2.5rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color .25s, transform .25s, box-shadow .25s;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      opacity: 0;
+      transition: opacity .3s;
+    }
+    .card:hover {
+      border-color: var(--border2);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(0,0,0,.4);
+    }
+    .card:hover::before { opacity: 1; }
+
+    .card-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--accent-dim);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.1rem;
+      font-size: 1rem;
+    }
+    .card h3 {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: .6rem;
+      letter-spacing: .01em;
+    }
+    .card p {
+      font-size: .87rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ── PUBLICATION LIST ───────────────────────────────── */
+    .pub-list { margin: 1rem 0 2.5rem; }
+
+    .pub-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: .75rem 1.25rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+      transition: background .2s;
+    }
+    .pub-item:first-child { border-top: 1px solid var(--border); }
+
+    .pub-year {
+      font-family: var(--mono);
+      font-size: .78rem;
+      color: var(--accent);
+      padding-top: .18rem;
+      white-space: nowrap;
+      letter-spacing: .04em;
+    }
+
+    .pub-body {}
+    .pub-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.35;
+      margin-bottom: .35rem;
+    }
+    .pub-meta {
+      font-size: .83rem;
+      color: var(--text-muted);
+    }
+    .pub-venue {
+      font-style: italic;
+      color: var(--text-dim);
+    }
+    .pub-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      margin-top: .6rem;
+    }
+    .pub-tag {
+      font-size: .7rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: .18em .65em;
+      background: var(--accent-dim);
+      border: 1px solid rgba(200,150,60,.2);
+      border-radius: 2px;
+      color: var(--accent);
+    }
+
+    /* ── BADGE PILLS ────────────────────────────────────── */
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin: 1rem 0 1.5rem;
+    }
+    .pill {
+      font-size: .77rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: .3em 1em;
+      background: var(--surface2);
+      border: 1px solid var(--border2);
+      border-radius: 100px;
+      color: var(--text-dim);
+    }
+
+    /* ── CONTACT ────────────────────────────────────────── */
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      max-width: 560px;
+    }
+    .contact-card p { margin-bottom: .6rem; }
+    .contact-card .label {
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: .25rem;
+      display: block;
+    }
+    .contact-card .value {
+      font-size: 1rem;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── INFO BOXES ─────────────────────────────────────── */
+    .info-box {
+      background: var(--accent-dim);
+      border: 1px solid rgba(200,150,60,.2);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .info-box p { font-size: .92rem; color: var(--text-dim); margin: 0; }
+
+    /* ── FOOTER ─────────────────────────────────────────── */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem var(--px);
+    }
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer p { font-size: .8rem; color: var(--text-muted); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a {
+      font-size: .8rem;
+      letter-spacing: .05em;
+      color: var(--text-muted);
+    }
+    .footer-links a:hover { color: var(--accent2); }
+
+    /* ── ANIMATIONS ─────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────────── */
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+      .card-grid { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+      .pub-item { grid-template-columns: 1fr; gap: .25rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="{{ '/' | relative_url }}" class="nav-brand">Étienne Tajeuna</a>
+    <div class="nav-links">
+      <a href="{{ '/research/' | relative_url }}">Research</a>
+      <a href="{{ '/publications/' | relative_url }}">Publications</a>
+      <a href="{{ '/teaching/' | relative_url }}">Teaching</a>
+      <a href="{{ '/students/' | relative_url }}">Students</a>
+      <a href="{{ '/projects/' | relative_url }}">Projects</a>
+      <a href="{{ '/cv/' | relative_url }}">CV</a>
+      <a href="{{ '/contact/' | relative_url }}">Contact</a>
+    </div>
+  </nav>
+
+  {{ content }}
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>© {% assign y = 'now' | date: "%Y" %}{{ y }} Étienne Tajeuna &nbsp;·&nbsp; Université du Québec en Outaouais</p>
+      <div class="footer-links">
+        <a href="{{ site.minima.social_links[0].url }}" target="_blank" rel="noopener">GitHub</a>
+        <a href="{{ site.minima.social_links[1].url }}" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="{{ site.minima.social_links[2].url }}" target="_blank" rel="noopener">Scholar</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
