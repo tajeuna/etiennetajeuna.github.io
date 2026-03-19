@@ -3,7 +3,7 @@ layout: page
 title: Curriculum Vitae
 eyebrow: Academic Profile
 lead: Full academic record including education, appointments, publications, and funding history.
-permalink: /cv/
+permalink:     etiennetajeuna.github.io/cv/
 ---
 
 My CV covers academic appointments, education, publications, grants, teaching experience, and service activities.
