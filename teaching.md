@@ -3,7 +3,7 @@ layout: page
 title: Teaching
 eyebrow: Teaching & Education
 lead: Courses in data science, machine learning, database systems, and knowledge engineering — emphasizing conceptual clarity and project-based application.
-permalink: /teaching/
+permalink:     etiennetajeuna.github.io/teaching/
 ---
 
 My teaching philosophy emphasizes methodological rigor, conceptual depth, and meaningful connections between theory and practice. I aim to develop students who can critically evaluate models, interpret results, and design data-driven solutions to real problems.
