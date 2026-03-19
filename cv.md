@@ -3,7 +3,7 @@ layout: page
 title: Curriculum Vitae
 eyebrow: Academic Profile
 lead: Full academic record including education, appointments, publications, and funding history.
-permalink:     etiennetajeuna.github.io/cv/
+permalink: /cv/
 ---
 
 My CV covers academic appointments, education, publications, grants, teaching experience, and service activities.
@@ -22,7 +22,6 @@ My CV covers academic appointments, education, publications, grants, teaching ex
 
 **Funding:** NSERC (Discovery Grant)
 
-**Affiliations:** MoDCAI (Founder)
 
 For a complete list of publications, consult my [Google Scholar profile](https://scholar.google.com/) or the [Publications](/publications/) page.
 
