@@ -3,7 +3,7 @@ layout: page
 title: Funding & Projects
 eyebrow: Research Funding
 lead: Externally funded research program supported by NSERC and applied collaborations in AI and data science.
-permalink: /projects/
+permalink:     etiennetajeuna.github.io/projects/
 ---
 
 ## Research funding
