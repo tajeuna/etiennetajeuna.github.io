@@ -3,7 +3,7 @@ layout: page
 title: Contact
 eyebrow: Get in Touch
 lead: Questions about research, graduate supervision, or collaboration? I am glad to hear from you.
-permalink: /contact/
+permalink:     etiennetajeuna.github.io/contact/
 ---
 
 <div class="contact-card">
