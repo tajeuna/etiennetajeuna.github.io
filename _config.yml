@@ -1,0 +1,36 @@
+title: "Étienne Tajeuna"
+description: "Research in graph representation learning, time series analysis, survival analysis, and context-aware AI."
+url: "https://etiennetajeuna.github.io"
+baseurl: ""
+
+theme: minima
+
+author:
+  name: "Étienne Tajeuna"
+  email: "your.email@uqo.ca"
+
+header_pages:
+  - research.md
+  - publications.md
+  - teaching.md
+  - students.md
+  - projects.md
+  - cv.md
+  - contact.md
+
+minima:
+  social_links:
+    - title: GitHub
+      icon: github
+      url: "https://github.com/yourgithubusername"
+    - title: LinkedIn
+      icon: linkedin
+      url: "https://www.linkedin.com/in/your-linkedin/"
+    - title: Google Scholar
+      icon: google-scholar
+      url: "https://scholar.google.com/..."
+
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
