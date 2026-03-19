@@ -1,7 +1,7 @@
 title: "Étienne Tajeuna"
 description: "Research in graph representation learning, time series analysis, survival analysis, and context-aware AI."
 url: "https://etiennetajeuna.github.io"
-baseurl: "/etiennetajeuna"
+baseurl: ""
 
 # Use custom layouts — no theme dependency
 # theme: minima  ← commented out; we use _layouts/
