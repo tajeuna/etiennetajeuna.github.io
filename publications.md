@@ -3,7 +3,7 @@ layout: page
 title: Publications
 eyebrow: Scholarly Work
 lead: A selection of peer-reviewed articles, conference papers, and ongoing research. Full list available on Google Scholar and in my CV.
-permalink: /publications/
+permalink:     etiennetajeuna.github.io/publications/
 ---
 
 <div class="info-box">
