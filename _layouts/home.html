@@ -1,0 +1,440 @@
+---
+layout: default
+---
+
+<!-- ── HERO ──────────────────────────────────────────────── -->
+<section class="hero">
+  <canvas id="graph-canvas" class="graph-canvas" aria-hidden="true"></canvas>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+      <span class="hero-eyebrow">Professor · Researcher · AI</span>
+      <h1 class="hero-name">Étienne<br>Tajeuna</h1>
+      <p class="hero-tagline">
+        Designing machine learning methods for<br>
+        <em>complex evolving systems</em>
+      </p>
+      <div class="hero-keywords" aria-label="Research areas">
+        <span>Graph Representation Learning</span>
+        <span>Co-evolving Time Series</span>
+        <span>Survival Analysis</span>
+        <span>Explainable AI</span>
+      </div>
+      <div class="hero-affil">
+        <span class="dot"></span>
+        <span>Université du Québec en Outaouais &nbsp;·&nbsp; Founder, MoDCAI</span>
+      </div>
+      <div class="hero-cta">
+        <a href="/research/" class="btn-primary">Research</a>
+        <a href="/publications/" class="btn-ghost">Publications</a>
+        <a href="/contact/" class="btn-ghost">Contact</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HIGHLIGHTS ─────────────────────────────────────────── -->
+<section class="highlights">
+  <div class="hl-inner">
+    <div class="hl-grid">
+
+      <a href="/research/" class="hl-card">
+        <div class="hl-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><line x1="7" y1="11.5" x2="17" y2="7"/><line x1="7" y1="12.5" x2="17" y2="17"/></svg>
+        </div>
+        <h3>Graph Learning</h3>
+        <p>Representation learning frameworks for dynamic and relational data — node classification, link prediction, evolving structures.</p>
+        <span class="hl-arrow">→</span>
+      </a>
+
+      <a href="/research/" class="hl-card">
+        <div class="hl-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="2 12 6 4 10 14 14 8 18 16 22 10"/></svg>
+        </div>
+        <h3>Co-evolving Time Series</h3>
+        <p>Modeling mutual influence between multiple temporal signals using contextual and structural dependencies.</p>
+        <span class="hl-arrow">→</span>
+      </a>
+
+      <a href="/research/" class="hl-card">
+        <div class="hl-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <h3>Survival Analysis</h3>
+        <p>Time-to-event prediction in dynamic environments, driven by structural, temporal, and contextual factors.</p>
+        <span class="hl-arrow">→</span>
+      </a>
+
+      <a href="/research/" class="hl-card">
+        <div class="hl-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Context-Aware AI</h3>
+        <p>Building interpretable models that predict and explain events in fraud detection, cybersecurity, and sports analytics.</p>
+        <span class="hl-arrow">→</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── SELECTED APPLICATIONS ──────────────────────────────── -->
+<section class="apps-strip">
+  <div class="apps-inner">
+    <p class="apps-label">Application domains</p>
+    <div class="apps-list">
+      <span>Social Networks</span>
+      <span class="sep">·</span>
+      <span>Cybersecurity</span>
+      <span class="sep">·</span>
+      <span>Fraud Detection</span>
+      <span class="sep">·</span>
+      <span>Health Analytics</span>
+      <span class="sep">·</span>
+      <span>Sports Prediction</span>
+    </div>
+  </div>
+</section>
+
+{{ content }}
+
+<style>
+/* ── HERO ───────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(30,36,60,.7) 0%, transparent 70%),
+              radial-gradient(ellipse 50% 80% at 20% 80%, rgba(20,14,6,.8) 0%, transparent 60%),
+              var(--bg);
+}
+
+.graph-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .35;
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-w);
+  width: 100%;
+  margin: 0 auto;
+  padding: calc(var(--nav-h) + 3rem) var(--px) 5rem;
+}
+
+.hero-content {
+  max-width: 680px;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-size: .72rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  animation: fadeUp .5s ease both;
+}
+
+.hero-name {
+  font-family: var(--serif);
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 300;
+  line-height: .95;
+  letter-spacing: -.02em;
+  color: #fff;
+  margin-bottom: 2rem;
+  animation: fadeUp .6s .08s ease both;
+}
+
+.hero-tagline {
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  font-weight: 300;
+  color: var(--text-dim);
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  animation: fadeUp .6s .16s ease both;
+}
+.hero-tagline em {
+  font-style: italic;
+  color: var(--text);
+}
+
+.hero-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-bottom: 2rem;
+  animation: fadeUp .6s .22s ease both;
+}
+.hero-keywords span {
+  font-size: .72rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: .3em 1em;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 100px;
+  color: var(--text-muted);
+}
+
+.hero-affil {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: 2.5rem;
+  font-size: .82rem;
+  color: var(--text-muted);
+  letter-spacing: .03em;
+  animation: fadeUp .6s .28s ease both;
+}
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  animation: fadeUp .6s .34s ease both;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: .65em 1.75em;
+  background: var(--accent);
+  color: #000;
+  font-size: .82rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  transition: background .2s, transform .15s, box-shadow .2s;
+}
+.btn-primary:hover {
+  background: var(--accent2);
+  color: #000;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px var(--accent-glow);
+}
+
+.btn-ghost {
+  display: inline-block;
+  padding: .65em 1.75em;
+  border: 1px solid var(--border2);
+  color: var(--text-dim);
+  font-size: .82rem;
+  font-weight: 400;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  transition: border-color .2s, color .2s;
+}
+.btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+/* ── HIGHLIGHTS ─────────────────────────── */
+.highlights {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.hl-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 4.5rem var(--px);
+}
+
+.hl-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.hl-card {
+  display: block;
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem 2rem;
+  color: inherit;
+  transition: border-color .25s, transform .25s, box-shadow .25s;
+  overflow: hidden;
+}
+.hl-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity .3s;
+}
+.hl-card:hover {
+  border-color: var(--border2);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,.5);
+  color: inherit;
+}
+.hl-card:hover::before { opacity: 1; }
+
+.hl-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--accent-dim);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  margin-bottom: 1.1rem;
+}
+.hl-card h3 {
+  font-family: var(--serif);
+  font-size: 1.18rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: .55rem;
+  letter-spacing: .01em;
+}
+.hl-card p {
+  font-size: .87rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+.hl-arrow {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.5rem;
+  font-size: 1rem;
+  color: var(--accent);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity .25s, transform .25s;
+}
+.hl-card:hover .hl-arrow { opacity: 1; transform: translateX(0); }
+
+/* ── APPS STRIP ─────────────────────────── */
+.apps-strip {
+  padding: 2rem var(--px);
+}
+.apps-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.apps-label {
+  font-size: .7rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+  margin: 0;
+}
+.apps-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem;
+  font-size: .82rem;
+  color: var(--text-dim);
+}
+.apps-list .sep { color: var(--border2); }
+
+/* ── RESPONSIVE ─────────────────────────── */
+@media (max-width: 600px) {
+  .hero-name { font-size: clamp(3rem, 15vw, 5rem); }
+  .hl-grid { grid-template-columns: 1fr; }
+  .hero-cta { flex-direction: column; align-items: flex-start; }
+  .apps-inner { flex-direction: column; align-items: flex-start; gap: .75rem; }
+}
+</style>
+
+<script>
+/* Animated graph-node canvas */
+(function () {
+  const canvas = document.getElementById('graph-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, nodes = [], raf;
+
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+
+  function rand(a, b) { return a + Math.random() * (b - a); }
+
+  function init() {
+    resize();
+    const n = Math.floor(W * H / 18000);
+    nodes = Array.from({ length: Math.min(n, 60) }, () => ({
+      x: rand(0, W), y: rand(0, H),
+      vx: rand(-.18, .18), vy: rand(-.18, .18),
+      r: rand(1.5, 3.5),
+    }));
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    /* edges */
+    const DIST = 170;
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const dx = nodes[i].x - nodes[j].x;
+        const dy = nodes[i].y - nodes[j].y;
+        const d = Math.sqrt(dx*dx + dy*dy);
+        if (d < DIST) {
+          const a = (1 - d / DIST) * .45;
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(200,150,60,${a})`;
+          ctx.lineWidth = .6;
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    /* nodes */
+    nodes.forEach(n => {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(200,150,60,.65)';
+      ctx.fill();
+    });
+
+    /* move */
+    nodes.forEach(n => {
+      n.x += n.vx; n.y += n.vy;
+      if (n.x < 0 || n.x > W) n.vx *= -1;
+      if (n.y < 0 || n.y > H) n.vy *= -1;
+    });
+
+    raf = requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', () => { cancelAnimationFrame(raf); init(); draw(); });
+  init();
+  draw();
+})();
+</script>
