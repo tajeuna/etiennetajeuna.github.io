@@ -3,20 +3,12 @@ description: "Research in graph representation learning, time series analysis, s
 url: "https://etiennetajeuna.github.io"
 baseurl: ""
 
-theme: minima
+# Use custom layouts — no theme dependency
+# theme: minima  ← commented out; we use _layouts/
 
 author:
   name: "Étienne Tajeuna"
   email: "your.email@uqo.ca"
-
-header_pages:
-  - research.md
-  - publications.md
-  - teaching.md
-  - students.md
-  - projects.md
-  - cv.md
-  - contact.md
 
 minima:
   social_links:
@@ -28,9 +20,12 @@ minima:
       url: "https://www.linkedin.com/in/your-linkedin/"
     - title: Google Scholar
       icon: google-scholar
-      url: "https://scholar.google.com/..."
+      url: "https://scholar.google.com/"
 
 markdown: kramdown
+kramdown:
+  input: GFM
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
