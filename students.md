@@ -3,7 +3,7 @@ layout: page
 title: Students
 eyebrow: Graduate Supervision
 lead: I supervise students working on machine learning, graph learning, time series, and related areas at the graduate and postgraduate levels.
-permalink:     etiennetajeuna.github.io/students/
+permalink: /students/
 ---
 
 I am committed to mentoring students who wish to develop rigorous research skills and make substantive contributions to machine learning and data science. My approach emphasizes mathematical foundations, clean experimental design, and clear scientific writing.
