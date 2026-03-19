@@ -3,12 +3,12 @@ layout: page
 title: Contact
 eyebrow: Get in Touch
 lead: Questions about research, graduate supervision, or collaboration? I am glad to hear from you.
-permalink:     etiennetajeuna.github.io/contact/
+permalink: /contact/
 ---
 
 <div class="contact-card">
   <span class="label">Name</span>
-  <div class="value">Étienne Tajeuna</div>
+  <div class="value">Etienne Tajeuna</div>
 
   <span class="label">Position</span>
   <div class="value">Professor of Computer Science</div>
@@ -17,7 +17,7 @@ permalink:     etiennetajeuna.github.io/contact/
   <div class="value">Université du Québec en Outaouais</div>
 
   <span class="label">Email</span>
-  <div class="value"><a href="mailto:your.email@uqo.ca">your.email@uqo.ca</a></div>
+  <div class="value"><a href="mailto:etiennegael.tajeuna@uqo.ca">etiennegael.tajeuna@uqo.ca</a></div>
 </div>
 
 ## Online profiles
@@ -44,7 +44,7 @@ permalink: etiennetajeuna.github.io/contact/
 
 ## Contact
 
-**Étienne Tajeuna**  
+**Etienne Tajeuna**  
 Professor and Researcher in Computer Science  
 
 Email: etiennegael.tajeuna@uqo.ca
