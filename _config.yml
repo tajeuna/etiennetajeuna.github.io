@@ -9,9 +9,10 @@ author:
 
 minima:
   social_links:
-    - title: GitHub
-      icon: github
-      url: "https://github.com/tajeuna"
+    # GitHub hidden until code is ready to share; uncomment to show it again.
+    # - title: GitHub
+    #   icon: github
+    #   url: "https://github.com/tajeuna"
     - title: LinkedIn
       icon: linkedin
       url: "https://www.linkedin.com/in/tajeuna/"
