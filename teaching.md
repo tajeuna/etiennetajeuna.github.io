@@ -49,23 +49,4 @@ RDF, OWL, SPARQL, ontology design, and linked data principles for knowledge grap
 
 ## Teaching approach
 
-I design courses around a progression from first principles to advanced applications. Students engage with theoretical foundations and implement models on real datasets, preparing them for both research and industry practice. Office hours, reading groups, and project mentoring are integral to my pedagogical approach.---
-layout: page
-title: Teaching
-permalink: /teaching/
----
-
-## Courses taught
-
-I have taught courses in data science, machine learning, database systems, recommender systems, semantic web, and data warehousing.
-
-### Examples
-- Data Warehousing and Data Mining
-- Machine Learning Techniques
-- Database Systems
-- Recommender Systems
-- Semantic Web
-
-## Teaching philosophy
-
-My teaching emphasizes conceptual clarity, methodological rigor, and project-based learning. I aim to help students connect theoretical foundations with practical applications in modern data-driven contexts.
+I design courses around a progression from first principles to advanced applications. Students engage with theoretical foundations and implement models on real datasets, preparing them for both research and industry practice. Office hours, reading groups, and project mentoring are integral to my pedagogical approach.

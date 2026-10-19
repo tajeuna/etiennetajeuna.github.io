@@ -58,24 +58,4 @@ Prospective students should be comfortable with:
 
 To get in touch, please send an email with your CV, transcripts, and a brief statement of research interest. Strong applicants will typically have relevant coursework or prior research experience.
 
-Please see the [Contact](/contact/) page for details.---
-layout: page
-title: Students
-permalink: /students/
----
-
-## Graduate supervision
-
-I supervise and co-supervise students working on machine learning, graph learning, time series analysis, fraud detection, and related topics.
-
-## Current topics
-
-- Graph-based intrusion detection
-- Fraud detection in financial auditing
-- Co-evolving time series forecasting
-- Social network analysis and graph structure learning
-- Sports event prediction using contextual data
-
-## Prospective students
-
-I welcome motivated students interested in graph machine learning, time series, survival analysis, explainable AI, and context-aware predictive modeling.
+Please see the [Contact]({{ '/contact/' | relative_url }}) page for details.

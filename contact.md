@@ -36,17 +36,4 @@ If you are writing to inquire about graduate supervision, please include:
 - Your CV and transcripts
 - Any prior research experience or publications
 
-I read all applications carefully and will respond to strong matches as promptly as possible.---
-layout: page
-title: Contact
-permalink: etiennetajeuna.github.io/contact/
----
-
-## Contact
-
-**Etienne Tajeuna**  
-Professor and Researcher in Computer Science  
-
-Email: etiennegael.tajeuna@uqo.ca
-
-You may also connect with me through GitHub, LinkedIn, or Google Scholar.
+I read all applications carefully and will respond to strong matches as promptly as possible.

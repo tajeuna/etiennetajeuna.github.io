@@ -12,7 +12,7 @@ My CV covers academic appointments, education, publications, grants, teaching ex
   <p>The PDF version is the most complete and current record. Please use it for formal reference.</p>
 </div>
 
-[Download CV (PDF)](/assets/files/CV_Etienne_Tajeuna.pdf){: .btn-primary}
+[Download CV (PDF)]({{ '/assets/files/CV_Etienne_Tajeuna.pdf' | relative_url }}){: .btn-primary}
 
 ## Summary
 
@@ -23,7 +23,7 @@ My CV covers academic appointments, education, publications, grants, teaching ex
 **Funding:** NSERC (Discovery Grant)
 
 
-For a complete list of publications, consult my [Google Scholar profile](https://scholar.google.com/) or the [Publications](/publications/) page.
+For a complete list of publications, consult my [Google Scholar profile](https://scholar.google.com/) or the [Publications]({{ '/publications/' | relative_url }}) page.
 
 <style>
 .btn-primary {
@@ -44,14 +44,4 @@ For a complete list of publications, consult my [Google Scholar profile](https:/
   background: var(--accent2);
   transform: translateY(-1px);
 }
-</style>---
-layout: page
-title: CV
-permalink: /cv/
----
-
-## Curriculum Vitae
-
-You can download my full CV here:
-
-[Download CV](../assets/files/CV_Etienne_Tajeuna.pdf)
+</style>
