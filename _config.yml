@@ -22,6 +22,8 @@ minima:
 exclude:
   - README.md
   - .idea
+  - MyProfile.jpeg
+  - CV_Etienne.pdf
 
 markdown: kramdown
 kramdown:

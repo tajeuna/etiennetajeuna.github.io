@@ -30,6 +30,9 @@ layout: default
         <a href="{{ '/contact/' | relative_url }}" class="btn-ghost">Contact</a>
       </div>
     </div>
+    <figure class="hero-photo">
+      <img src="{{ '/assets/img/profile.jpg' | relative_url }}" alt="Portrait of Étienne Tajeuna" width="480" height="640" />
+    </figure>
   </div>
 </section>
 
@@ -129,8 +132,31 @@ layout: default
   padding: calc(var(--nav-h) + 3rem) var(--px) 5rem;
 }
 
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
 .hero-content {
   max-width: 680px;
+  flex: 1 1 auto;
+}
+
+.hero-photo {
+  flex: 0 0 auto;
+  width: clamp(220px, 26vw, 320px);
+  margin: 0;
+  animation: fadeUp .7s .2s ease both;
+}
+.hero-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border2);
+  box-shadow: 0 24px 64px rgba(0,0,0,.55), 0 0 0 6px var(--accent-dim);
 }
 
 .hero-eyebrow {
@@ -360,6 +386,11 @@ layout: default
 .apps-list .sep { color: var(--border2); }
 
 /* ── RESPONSIVE ─────────────────────────── */
+@media (max-width: 860px) {
+  .hero-inner { flex-direction: column-reverse; align-items: flex-start; }
+  .hero-photo { width: min(220px, 60vw); }
+}
+
 @media (max-width: 600px) {
   .hero-name { font-size: clamp(3rem, 15vw, 5rem); }
   .hl-grid { grid-template-columns: 1fr; }
