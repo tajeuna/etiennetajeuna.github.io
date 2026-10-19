@@ -23,6 +23,7 @@ exclude:
   - README.md
   - .idea
   - MyProfile.jpeg
+  - MyProfile2.jpeg
   - CV_Etienne.pdf
 
 markdown: kramdown
