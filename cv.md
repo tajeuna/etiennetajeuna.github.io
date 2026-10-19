@@ -154,4 +154,26 @@ Database cleaning and exploration.
 
 ## Publications
 
-Selected publications are listed on the [Publications]({{ '/publications/' | relative_url }}) page. For the complete list, see [Google Scholar]({{ site.minima.social_links | where: 'title', 'Google Scholar' | map: 'url' | first }}).
+Selected publications. For the complete list, see [Google Scholar]({{ site.minima.social_links | where: 'title', 'Google Scholar' | map: 'url' | first }}).
+
+### Journals
+
+1. R. Manassé, J. M. Tshimula, **E. Tajeuna**, K. Kyamakya, "Towards Sports Betting as a Financial Asset: An Investigative Analysis of Risk, Investment Potential, and Future Perspectives," *IEEE Access*, 2026.
+2. R. Manassé, J. M. Tshimula, **E. Tajeuna**, K. Kyamakya, "A Systematic Review of Machine Learning in Sports Betting: Techniques, Challenges, and Future Directions," *European Journal of Sport Science* ([arXiv:2410.21484](https://arxiv.org/abs/2410.21484)).
+3. **E. Tajeuna**, M. Bouguessa, S. Wang, "Modeling Regime Shifts for Multiple Time-Series," *ACM Transactions on Knowledge Discovery from Data (TKDD)*, 2023.
+4. **E. Tajeuna**, M. Bouguessa, S. Wang, "Mining Customers' Changeable Electricity Consumption for Effective Load Forecasting," *ACM Transactions on Intelligent Systems and Technology (TIST)*, 2022.
+
+### Conferences
+
+1. D. Benchikh, M. S. Allili, **E. Tajeuna**, "Contextual Stance-Aware Semantic Graph Learning for Fake News Detection," *Canadian AI 2026*.
+2. R. M. Galekwa, J. M. Tshimula, **E. Tajeuna**, S. K. Kasereka, K. Kyamakya, "Risk Parity vs. Kelly Criterion: An Empirical Evaluation of Bankroll Allocation Strategies in Football Value Betting," *ISACE 2026*.
+3. **E. Tajeuna**, R. Missaoui, "Modèle de survie multi-états pour l'analyse de la dynamique des sentiments dans les médias sociaux," *EGC 2026*.
+4. **E. Tajeuna**, "Multi-State Survival Framework for Modeling Sentiment Shifts in Social Media," *ASONAM 2025*.
+5. H. Attoumi, **E. Tajeuna**, M. S. Allili, "Causal Graph Modeling of Network Traffic for Early Cyberattack Prediction," *FPS 2025*.
+6. A. F. Zoungrana, H. Moudoud, **E. Tajeuna**, K. Adi, "Adversarial Ensemble Framework: Leveraging GANs for Robust Intrusion Detection in IoT Networks," *CRiSIS 2025*.
+7. **E. Tajeuna**, J. M. Tshimula, "GRAVITY: Graph Representation Learning via Adaptive Force-Driven Vertex Interactions," [arXiv:2508.08954](https://arxiv.org/abs/2508.08954), 2025.
+8. P. Owusu, **E. Tajeuna**, J.-M. Patenaude, A. Brun, S. Wang, "Rethinking Temporal Dependencies in Multiple Time Series: A Use Case in Financial Data," *IEEE ICDM 2024*.
+9. **E. Tajeuna**, A. F. M. Fahmy, M. Bouguessa, "Modeling Time-Varying User Attitudes in Social Media," *IEEE COMPSAC 2023*.
+10. **E. Tajeuna**, M. Bouguessa, "A Time-Dependent-Based Approach to Enhance Self-Harm Prediction," *ASONAM 2023*.
+11. **E. Tajeuna**, M. Bouguessa, "Dynamic Cox-Regression for Motif Prediction in Co-Evolving Time Series Data," *IJCNN 2022*.
+12. **E. Tajeuna**, M. Bouguessa, S. Wang, "A Longitudinal Study of Customer Electricity Load Profiles," *IEEE COMPSAC 2022*.
