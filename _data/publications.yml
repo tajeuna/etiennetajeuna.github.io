@@ -1,0 +1,170 @@
+# Single source for the Publications and CV pages. Newest first within each type.
+# type: journal | conference | preprint
+
+- type: journal
+  year: 2026
+  title: "Toward Sports Betting as a Financial Asset: An Investigative Analysis of Risk, Investment Potential, and Future Perspectives"
+  authors: "R. M. Galekwa, J. M. Tshimula, E. Tajeuna, K. Kyamakya"
+  venue: "IEEE Access"
+  doi: "10.1109/ACCESS.2026.3669489"
+
+- type: journal
+  year: 2025
+  title: "A Systematic Review of Machine Learning in Sports Betting: Techniques, Challenges, and Future Directions"
+  authors: "R. M. Galekwa, J. M. Tshimula, E. Tajeuna, K. Kyamakya"
+  venue: "European Journal of Sport Science"
+  url: "https://arxiv.org/abs/2410.21484"
+  link_label: "arXiv:2410.21484"
+
+- type: journal
+  year: 2023
+  title: "Modeling Regime Shifts in Multiple Time Series"
+  authors: "E. Tajeuna, M. Bouguessa, S. Wang"
+  venue: "ACM Transactions on Knowledge Discovery from Data (TKDD)"
+  doi: "10.1145/3592857"
+
+- type: journal
+  year: 2021
+  title: "Mining Customers' Changeable Electricity Consumption for Effective Load Forecasting"
+  authors: "E. Tajeuna, M. Bouguessa, S. Wang"
+  venue: "ACM Transactions on Intelligent Systems and Technology (TIST)"
+  doi: "10.1145/3466684"
+
+- type: journal
+  year: 2019
+  title: "Modeling and Predicting Community Structure Changes in Time-Evolving Social Networks"
+  authors: "E. Tajeuna, M. Bouguessa, S. Wang"
+  venue: "IEEE Transactions on Knowledge and Data Engineering (TKDE)"
+  doi: "10.1109/TKDE.2018.2851586"
+
+- type: conference
+  year: 2026
+  title: "Contextual Stance-Aware Semantic Graph Learning for Fake News Detection"
+  authors: "D. Benchikh, M. S. Allili, E. Tajeuna"
+  venue: "Canadian AI 2026"
+
+- type: conference
+  year: 2026
+  title: "Risk Parity vs. Kelly Criterion: An Empirical Evaluation of Bankroll Allocation Strategies in Football Value Betting"
+  authors: "R. M. Galekwa, J. M. Tshimula, E. Tajeuna, S. K. Kasereka, K. Kyamakya"
+  venue: "ISACE 2026, Lecture Notes in Computer Science"
+  doi: "10.1007/978-3-032-27272-0_19"
+
+- type: conference
+  year: 2026
+  title: "Modèle de survie multi-états pour l'analyse de la dynamique des sentiments dans les médias sociaux"
+  authors: "E. Tajeuna, R. Missaoui"
+  venue: "EGC 2026"
+
+- type: conference
+  year: 2025
+  title: "Multi-State Survival Framework for Modeling Sentiment Shifts in Social Media"
+  authors: "E. Tajeuna"
+  venue: "ASONAM 2025, Lecture Notes in Computer Science"
+  doi: "10.1007/978-3-032-13513-1_1"
+
+- type: conference
+  year: 2025
+  title: "Causal Graph Modeling of Network Traffic for Early Cyberattack Prediction"
+  authors: "H. Attoumi, E. Tajeuna, M. S. Allili"
+  venue: "FPS 2025, Lecture Notes in Computer Science"
+  doi: "10.1007/978-3-032-20026-6_10"
+
+- type: conference
+  year: 2025
+  title: "Adversarial Ensemble Framework: Leveraging GANs for Robust Intrusion Detection in IoT Networks"
+  authors: "A. F. Zoungrana, H. Moudoud, E. Tajeuna, K. Adi"
+  venue: "CRiSIS 2025, Lecture Notes in Computer Science"
+  doi: "10.1007/978-3-032-20732-6_6"
+
+- type: conference
+  year: 2023
+  title: "Rethinking Temporal Dependencies in Multiple Time Series: A Use Case in Financial Data"
+  authors: "P. A. Owusu, E. Tajeuna, J.-M. Patenaude, A. Brun, S. Wang"
+  venue: "IEEE International Conference on Data Mining (ICDM 2023)"
+  doi: "10.1109/ICDM58522.2023.00156"
+
+- type: conference
+  year: 2023
+  title: "Tracking User Sentiment Changes on Social Networks"
+  authors: "A. F. M. Fahmy, E. Tajeuna, M. Bouguessa"
+  venue: "ASONAM 2023"
+  doi: "10.1145/3625007.3627728"
+
+- type: conference
+  year: 2023
+  title: "Modeling Time-Varying User Attitudes in Social Media"
+  authors: "E. Tajeuna, A. F. M. Fahmy, M. Bouguessa"
+  venue: "IEEE COMPSAC 2023"
+  doi: "10.1109/COMPSAC57700.2023.00135"
+
+- type: conference
+  year: 2022
+  title: "Dynamic Cox-Regression for Motif Prediction in Co-Evolving Time Series Data"
+  authors: "E. Tajeuna, M. Bouguessa"
+  venue: "International Joint Conference on Neural Networks (IJCNN 2022)"
+  doi: "10.1109/IJCNN55064.2022.9892174"
+
+- type: conference
+  year: 2022
+  title: "A Time-Dependent-Based Approach to Enhance Self-Harm Prediction"
+  authors: "E. Tajeuna, M. Bouguessa"
+  venue: "IEEE/ACM ASONAM 2022"
+  doi: "10.1109/ASONAM55673.2022.10068572"
+
+- type: conference
+  year: 2022
+  title: "A Longitudinal Study of Customer Electricity Load Profiles"
+  authors: "E. Tajeuna, M. Bouguessa, S. Wang"
+  venue: "IEEE COMPSAC 2022"
+  doi: "10.1109/COMPSAC54236.2022.00048"
+
+- type: conference
+  year: 2018
+  title: "A Network-Based Approach to Enhance Electricity Load Forecasting"
+  authors: "E. Tajeuna, M. Bouguessa, S. Wang"
+  venue: "IEEE International Conference on Data Mining Workshops (ICDMW 2018)"
+  doi: "10.1109/ICDMW.2018.00046"
+
+- type: conference
+  year: 2017
+  title: "Survival Analysis for Modeling Critical Events that Communities May Undergo in Dynamic Social Networks"
+  authors: "E. Tajeuna, M. Bouguessa, S. Wang"
+  venue: "ACM Symposium on Applied Computing (SAC 2017)"
+  doi: "10.1145/3019612.3019817"
+
+- type: conference
+  year: 2017
+  title: "A Comparative Study of Different Approaches for Tracking Communities in Evolving Social Networks"
+  authors: "Z. He, E. Tajeuna, S. Wang, M. Bouguessa"
+  venue: "IEEE International Conference on Data Science and Advanced Analytics (DSAA 2017)"
+  doi: "10.1109/DSAA.2017.62"
+
+- type: conference
+  year: 2016
+  title: "Tracking Communities over Time in Dynamic Social Network"
+  authors: "E. Tajeuna, M. Bouguessa, S. Wang"
+  venue: "Lecture Notes in Computer Science"
+  doi: "10.1007/978-3-319-41920-6_25"
+
+- type: conference
+  year: 2015
+  title: "Tracking the Evolution of Community Structures in Time-Evolving Social Networks"
+  authors: "E. Tajeuna, M. Bouguessa, S. Wang"
+  venue: "IEEE International Conference on Data Science and Advanced Analytics (DSAA 2015)"
+  doi: "10.1109/DSAA.2015.7344876"
+
+- type: preprint
+  year: 2026
+  title: "Capital Preservation in Sports-Betting Portfolios: A Calibrated, Risk-Aware Two-Stage Framework"
+  authors: "K. Kyamakya, R. M. Galekwa, J. M. Tshimula, E. Tajeuna, S. K. Kasereka, J. C. Chedjou"
+  venue: "SSRN"
+  doi: "10.2139/ssrn.7597549"
+
+- type: preprint
+  year: 2025
+  title: "GRAVITY: Graph Representation Learning via Adaptive Force-Driven Vertex Interactions"
+  authors: "E. Tajeuna, J. M. Tshimula"
+  venue: "arXiv"
+  url: "https://arxiv.org/abs/2508.08954"
+  link_label: "arXiv:2508.08954"

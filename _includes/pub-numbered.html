@@ -1,0 +1,6 @@
+{% assign pubs = site.data.publications | where: "type", include.type %}
+<ol>
+{% for p in pubs %}
+  <li>{{ p.authors | replace: "E. Tajeuna", "<strong>E. Tajeuna</strong>" }}, “{{ p.title }},” <em>{{ p.venue }}</em>, {{ p.year }}.{% if p.doi %} <a href="https://doi.org/{{ p.doi }}">DOI</a>{% elsif p.url %} <a href="{{ p.url }}">{{ p.link_label | default: "Link" }}</a>{% endif %}</li>
+{% endfor %}
+</ol>
