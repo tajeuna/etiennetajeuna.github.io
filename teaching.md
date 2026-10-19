@@ -2,51 +2,33 @@
 layout: page
 title: Teaching
 eyebrow: Teaching & Education
-lead: Courses in data science, machine learning, database systems, and knowledge engineering — emphasizing conceptual clarity and project-based application.
+lead: Courses in databases, data mining, machine learning, and the semantic web, from undergraduate to graduate level.
 permalink: /teaching/
 ---
 
-My teaching philosophy emphasizes methodological rigor, conceptual depth, and meaningful connections between theory and practice. I aim to develop students who can critically evaluate models, interpret results, and design data-driven solutions to real problems.
+My teaching emphasizes conceptual clarity, methodological rigor, and project-based learning, so that students connect theoretical foundations with practical applications.
 
-## Courses taught
+## Université du Québec en Outaouais
 
-### Machine Learning Techniques
-An advanced course covering supervised, unsupervised, and semi-supervised learning methods, with attention to model selection, regularization, ensemble methods, and deep learning fundamentals.
+Professor of Computer Science since 2024, and Director of the Computer Science Program since May 2026.
 
-<div class="pill-row">
-  <span class="pill">Regression</span>
-  <span class="pill">Classification</span>
-  <span class="pill">Neural Networks</span>
-  <span class="pill">Ensemble Methods</span>
-  <span class="pill">Unsupervised Learning</span>
-</div>
+- **INF4163** — Database Techniques
+- **INF5173** — Data Mining and Data Warehousing
+- **INF1473** — Data Warehousing and Data Exploration
+- **INF6243** — Learning Techniques
+- **INF6253** — Semantic Web
+- **INF6423** — Workshop in Cybersecurity and System Reliability
+- **INF6083** — Special Topics: Recommender Systems
 
-### Data Warehousing and Data Mining
-Covers dimensional modeling, ETL processes, OLAP, and knowledge extraction techniques including association rules, clustering, and predictive analytics on large datasets.
+## Other institutions
 
-<div class="pill-row">
-  <span class="pill">Data Warehousing</span>
-  <span class="pill">OLAP</span>
-  <span class="pill">Association Rules</span>
-  <span class="pill">Clustering</span>
-</div>
+### McGill University, School of Continuing Studies
+- **YCNG 235** — Recommender Systems (Summer 2023, 2024)
+- **CCS2-505** — Programming for Data Science (Fall 2022)
 
-### Database Systems
-Relational algebra, SQL, normalization, transaction management, and an introduction to NoSQL and graph databases in modern data architectures.
+### Université de Sherbrooke
+- **IFT-599/799** — Data Science (Fall 2022, 2023)
+- Teaching assistant for Introduction to Relational Databases, Algorithms and Data Structures, and Information Retrieval and Data Mining (2014–2016)
 
-<div class="pill-row">
-  <span class="pill">SQL</span>
-  <span class="pill">Relational Algebra</span>
-  <span class="pill">Transactions</span>
-  <span class="pill">NoSQL</span>
-</div>
-
-### Recommender Systems
-Collaborative filtering, content-based methods, matrix factorization, and hybrid approaches, with a focus on evaluation, scalability, and fairness.
-
-### Semantic Web
-RDF, OWL, SPARQL, ontology design, and linked data principles for knowledge graph construction and reasoning.
-
-## Teaching approach
-
-I design courses around a progression from first principles to advanced applications. Students engage with theoretical foundations and implement models on real datasets, preparing them for both research and industry practice. Office hours, reading groups, and project mentoring are integral to my pedagogical approach.
+### IVADO — Institute for Data Valorization
+- Instructor, 100 Days Data.Trek (Winter 2022): fundamentals of graph representation with R, and Python programming for machine learning

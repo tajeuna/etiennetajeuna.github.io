@@ -2,62 +2,62 @@
 layout: page
 title: Research
 eyebrow: Research Program
-lead: My work lies at the intersection of machine learning, graph-based modeling, time series analysis, and interpretable AI.
+lead: Context modeling and the analysis of dynamic complex systems through graph structures, temporal models, and survival analysis.
 permalink: /research/
 ---
 
-My research investigates how contextual and structural dependencies can be modeled to support prediction and decision-making in complex, evolving environments. I develop principled methods that are both theoretically grounded and applicable to real-world problems in security, health, and social systems.
+My research investigates how contextual and structural dependencies can be modeled to predict and explain events in complex, evolving systems. The program is funded by an NSERC Discovery Grant (2025–2030) and carried out at the Université du Québec en Outaouais, in collaboration with the LARIM laboratory.
 
 ## Main research themes
 
 ### Graph representation learning
 
-I develop graph-based learning frameworks for relational and evolving data. My work addresses representation learning for dynamic graphs, where nodes, edges, and their attributes change over time. Key problems include node classification in temporal graphs, link prediction under distribution shift, and scalable aggregation schemes that respect temporal ordering.
+Graph-based learning for relational and evolving data: tracking communities and substructures in dynamic graphs, predicting their evolution and disappearance, and learning representations of graph structure for event prediction.
 
 ### Co-evolving time series
 
-Multiple time series seldom evolve in isolation — their mutual influences are precisely what make them informative. My research formalizes these dependencies and develops models that exploit both temporal and structural signals for forecasting, anomaly detection, and model selection under non-stationarity.
+Multiple time series rarely evolve in isolation. I model the dependencies and influence relationships among synchronous series, including regime shifts and causal dependencies, to improve forecasting and interpretability.
 
 ### Survival analysis and event prediction
 
-I explore methods for modeling time-to-event data in dynamic settings, with particular attention to cases where hazard functions depend on structural, temporal, and contextual covariates. Applications include early detection of intrusions, fraud onset, and outcome prediction in competitive environments.
+Time-to-event modeling in dynamic settings, from multi-state survival models of sentiment shifts in social media to deep nonlinear approaches for risk modeling and dynamic Cox regression for motif prediction.
 
-### Context-aware and explainable AI
+### Knowledge graphs and logical rules
 
-A central goal of my research is to build models that not only predict well, but also provide interpretable descriptions of the context in which events emerge. This work draws on attention mechanisms, symbolic constraints, and discourse-level signals to support human-intelligible explanations.
+With colleagues at LARIM, I work on formal concept analysis, logical rule extraction from knowledge graphs, and knowledge-graph modeling for image recognition and forecasting.
 
 ## Application domains
 
 <div class="card-grid">
 
 <div class="card">
-<div class="card-icon">🔐</div>
-<h3>Cybersecurity</h3>
-<p>Graph-based intrusion detection and anomaly localization in network traffic streams.</p>
+<div class="card-icon">🕸️</div>
+<h3>Social Media</h3>
+<p>Sentiment dynamics, user attitudes, self-harm prediction, and disinformation detection.</p>
 </div>
 
 <div class="card">
-<div class="card-icon">💳</div>
-<h3>Fraud Detection</h3>
-<p>Intelligent auditing systems that model transactional behavior through temporal graphs.</p>
+<div class="card-icon">🔐</div>
+<h3>Cybersecurity</h3>
+<p>Graph-based modeling of network traffic and security logs for intrusion and cyberattack prediction.</p>
 </div>
 
 <div class="card">
 <div class="card-icon">🩺</div>
-<h3>Health Analytics</h3>
-<p>Survival modeling and event prediction over longitudinal patient data.</p>
+<h3>Health</h3>
+<p>Spatio-temporal health context modeling, risk prediction, and descriptors of post-COVID-19 conditions.</p>
 </div>
 
 <div class="card">
-<div class="card-icon">🕸️</div>
-<h3>Social Networks</h3>
-<p>Community detection and influence propagation in large dynamic graphs.</p>
+<div class="card-icon">⚡</div>
+<h3>Energy &amp; Finance</h3>
+<p>Electricity load profiling and forecasting, and temporal dependencies in financial time series.</p>
 </div>
 
 <div class="card">
 <div class="card-icon">🏆</div>
 <h3>Sports Analytics</h3>
-<p>Predictive modeling of match outcomes using expert discourse and contextual signals.</p>
+<p>Knowledge-graph and context modeling for event prediction in team sports and sports betting.</p>
 </div>
 
 </div>

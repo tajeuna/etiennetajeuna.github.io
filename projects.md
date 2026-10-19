@@ -1,36 +1,31 @@
 ---
 layout: page
-title: Funding & Projects
+title: Funding & Partnerships
 eyebrow: Research Funding
-lead: Externally funded research program supported by NSERC and applied collaborations in AI and data science.
+lead: Research supported by NSERC, Mitacs, and IMC2, with community and industry partners.
 permalink: /projects/
 ---
 
-## Research funding
+## Grants
 
-### NSERC — Natural Sciences and Engineering Research Council of Canada
+### NSERC Discovery Grant — Principal Investigator
+**2025–2030 · CAD $192,500**
 
-My research program is supported by NSERC grants focused on graph-based and temporal learning methods for complex evolving systems. This funding supports graduate students, postdoctoral researchers, computing resources, and conference participation.
+Context modeling and the analysis of dynamic complex systems through graph structures, temporal models, and survival analysis.
 
-## Selected projects
+### Mitacs Globalink — Principal Investigator
+**2026 · CAD $15,000**
 
-### Context-aware modeling for event prediction
-Developing principled frameworks that leverage contextual signals — discourse, user behavior, environmental state — to improve the precision and interpretability of event prediction models.
+Modeling the sports context for event prediction.
 
-### Graph representation learning for dynamic systems
-Building scalable GNN architectures for temporal graphs that handle node/edge additions, deletions, and attribute drift, with applications in social and infrastructure networks.
+### IMC2 Call for Projects — Co-Investigator
+**2026–2027 · CAD $72,000**
 
-### Fraud detection in intelligent audits
-Partnering with industry to design AI-powered audit systems that detect irregular patterns in financial transaction graphs using temporal and structural features.
+Graph models for differentially private data analysis and the protection of information systems.
 
-### Dynamic graph learning for cybersecurity
-Real-time anomaly detection in network traffic using streaming graph representations and event-driven model updates.
+## Partnerships
 
-### Predictive modeling for sports outcomes
-Integrating structured match statistics with unstructured expert discourse and betting market signals for probabilistic prediction.
+- **SOCODEVI** — community partnership (NGO) through Mitacs programs
+- **Hulotech** — industry partnership through Mitacs programs
 
-## Industry and applied collaborations
-
-I am open to applied research partnerships involving AI, predictive analytics, and knowledge graph applications in industry settings. Collaborations may take the form of co-funded graduate projects, contracted research, or joint publications.
-
-If you are interested in discussing a potential collaboration, please [get in touch]({{ '/contact/' | relative_url }}).
+I am open to applied research collaborations in AI, predictive analytics, and knowledge graphs, for example co-funded graduate projects through Mitacs. Please [get in touch]({{ '/contact/' | relative_url }}).
