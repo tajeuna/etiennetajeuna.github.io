@@ -12,6 +12,9 @@ minima:
     - title: GitHub
       icon: github
       url: "https://github.com/tajeuna"
+    - title: LinkedIn
+      icon: linkedin
+      url: "https://www.linkedin.com/in/tajeuna/"
     - title: Google Scholar
       icon: google-scholar
       url: "https://scholar.google.com/citations?user=zM9JvdMAAAAJ"
