@@ -28,4 +28,4 @@ Graph models for differentially private data analysis and the protection of info
 - **SOCODEVI** — community partnership (NGO) through Mitacs programs
 - **Hulotech** — industry partnership through Mitacs programs
 
-I am open to applied research collaborations in AI, predictive analytics, and knowledge graphs, for example co-funded graduate projects through Mitacs. Please [get in touch]({{ '/contact/' | relative_url }}).
+I am open to applied research collaborations in AI, predictive analytics, and knowledge graphs. Please [get in touch]({{ '/contact/' | relative_url }}).

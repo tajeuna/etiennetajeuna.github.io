@@ -2,7 +2,7 @@
 layout: page
 title: Contact
 eyebrow: Get in Touch
-lead: Questions about research, graduate supervision, or collaboration? I am glad to hear from you.
+lead: Questions about research or collaboration? I am glad to hear from you.
 permalink: /contact/
 ---
 
@@ -19,11 +19,3 @@ permalink: /contact/
   <span class="label">Email</span>
   <div class="value"><a href="mailto:etiennegael.tajeuna@uqo.ca">etiennegael.tajeuna@uqo.ca</a></div>
 </div>
-
-## Prospective students
-
-If you are writing about graduate supervision, please include:
-
-- A brief statement of your research interests (1–2 paragraphs)
-- Your CV and transcripts
-- Any prior research experience or publications
