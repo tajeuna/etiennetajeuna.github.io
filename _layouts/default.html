@@ -480,131 +480,175 @@
     </div>
   </footer>
   <script>
-  /* Animated network background: drifting communities, intra/inter-community
-     edges, and signals diffusing along edges. */
+  /* Animated network background: clustered communities (each one internally
+     connected), bridged to each other so the whole graph is connected, with
+     signals diffusing along the edges. */
   (function () {
     const canvas = document.getElementById('net-bg');
     if (!canvas || !canvas.getContext) return;
     const ctx = canvas.getContext('2d');
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const PALETTE = ['37,99,235', '14,165,233', '100,116,139', '99,102,241'];
-    const LINK = 150, LINK2 = LINK * LINK;
-    let W, H, dpr, nodes = [], comms = [], pulses = [], raf, mouse = null;
+    const PALETTE = ['37,99,235', '14,165,233', '99,102,241', '6,182,212', '59,130,246', '129,140,248', '56,189,248'];
+    const TAU = Math.PI * 2;
+    let W, H, dpr, comms = [], nodes = [], edges = [], adj = [], pulses = [], raf, mouse = null, t = 0;
 
     const rand = (a, b) => a + Math.random() * (b - a);
+    const dist2 = (a, b) => (a.x - b.x) ** 2 + (a.y - b.y) ** 2;
+
+    function link(i, j, bridge) {
+      if (i === j || adj[i].includes(j)) return;
+      edges.push({ a: i, b: j, bridge });
+      adj[i].push(j); adj[j].push(i);
+    }
+
+    /* Minimum spanning tree (Prim) over a list of points: guarantees connectivity. */
+    function mst(pts, onEdge) {
+      const inTree = [0], rest = pts.map((_, i) => i).slice(1);
+      while (rest.length) {
+        let best = Infinity, bi = 0, bj = 0;
+        inTree.forEach(i => rest.forEach((j, r) => {
+          const d = dist2(pts[i], pts[j]);
+          if (d < best) { best = d; bi = i; bj = r; }
+        }));
+        onEdge(bi, rest[bj]);
+        inTree.push(rest[bj]); rest.splice(bj, 1);
+      }
+    }
+
+    function place() {
+      comms.forEach(c => {
+        c.x = c.hx + Math.sin(t * c.wx + c.px) * c.ax;
+        c.y = c.hy + Math.cos(t * c.wy + c.py) * c.ay;
+        c.rot = c.rot0 + t * c.spin;
+      });
+      nodes.forEach(n => {
+        const c = comms[n.c], cos = Math.cos(c.rot), sin = Math.sin(c.rot);
+        const wob = 6 * Math.sin(t * n.wf + n.ph);
+        n.x = c.x + n.ox * cos - n.oy * sin + wob;
+        n.y = c.y + n.ox * sin + n.oy * cos + wob * .6;
+      });
+    }
 
     function init() {
       dpr = Math.min(window.devicePixelRatio || 1, 2);
       W = window.innerWidth; H = window.innerHeight;
       canvas.width = W * dpr; canvas.height = H * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      t = 0; pulses = [];
 
-      const k = W < 700 ? 3 : 4;
+      const k = W < 700 ? 4 : Math.max(5, Math.min(8, Math.round(W * H / 200000)));
+      const cols = Math.max(1, Math.round(Math.sqrt(k * W / H))), rows = Math.ceil(k / cols);
+      const cellW = W / cols, cellH = H / rows, R = Math.min(cellW, cellH) * .34;
       comms = Array.from({ length: k }, (_, i) => ({
-        x: rand(W * .15, W * .85), y: rand(H * .15, H * .85),
-        vx: rand(-.12, .12), vy: rand(-.12, .12),
-        color: PALETTE[i % PALETTE.length],
+        hx: cellW * (i % cols + .5) + rand(-cellW, cellW) * .12,
+        hy: cellH * (Math.floor(i / cols) + .5) + rand(-cellH, cellH) * .12,
+        ax: rand(.04, .09) * W, ay: rand(.04, .09) * H,
+        wx: rand(.0012, .0026), wy: rand(.0012, .0026), px: rand(0, TAU), py: rand(0, TAU),
+        rot0: rand(0, TAU), spin: rand(-.0016, .0016),
+        color: PALETTE[i % PALETTE.length], members: [],
       }));
-      const n = Math.max(28, Math.min(90, Math.floor(W * H / 16000)));
-      nodes = Array.from({ length: n }, () => {
-        const c = Math.floor(Math.random() * k);
-        const a = rand(0, Math.PI * 2), d = rand(0, Math.min(W, H) * .28);
-        return {
-          c, x: comms[c].x + Math.cos(a) * d, y: comms[c].y + Math.sin(a) * d,
-          vx: rand(-.25, .25), vy: rand(-.25, .25), r: rand(1.4, 3.2), deg: 0,
-        };
+
+      const total = Math.max(50, Math.min(160, Math.floor(W * H / 8500)));
+      nodes = Array.from({ length: total }, (_, n) => {
+        const c = n % k, a = rand(0, TAU), r = R * Math.sqrt(Math.random());
+        comms[c].members.push(n);
+        return { c, ox: Math.cos(a) * r, oy: Math.sin(a) * r, r: rand(1.3, 2.6),
+                 wf: rand(.008, .02), ph: rand(0, TAU), deg: 0, x: 0, y: 0 };
       });
-      pulses = [];
+      edges = []; adj = nodes.map(() => []);
+
+      /* Intra-community edges: spanning tree + a few nearest neighbours. */
+      comms.forEach(c => {
+        const pts = c.members.map(i => ({ x: nodes[i].ox, y: nodes[i].oy }));
+        mst(pts, (a, b) => link(c.members[a], c.members[b], false));
+        c.members.forEach((i, ia) => {
+          const near = c.members
+            .map((j, ib) => ({ j, d: dist2(pts[ia], pts[ib]) }))
+            .filter(o => o.j !== i).sort((p, q) => p.d - q.d).slice(0, 2);
+          near.forEach(o => { if (Math.random() < .6) link(i, o.j, false); });
+        });
+      });
+
+      /* Inter-community bridges: spanning tree over communities + a few extras. */
+      place();
+      const closestPair = (A, B) => {
+        let best = Infinity, pair = [A.members[0], B.members[0]];
+        A.members.forEach(i => B.members.forEach(j => {
+          const d = dist2(nodes[i], nodes[j]);
+          if (d < best) { best = d; pair = [i, j]; }
+        }));
+        return pair;
+      };
+      mst(comms.map(c => ({ x: c.hx, y: c.hy })), (a, b) => {
+        const [i, j] = closestPair(comms[a], comms[b]); link(i, j, true);
+      });
+      for (let e = 0; e < Math.ceil(k / 2); e++) {
+        const a = Math.floor(Math.random() * k), b = Math.floor(Math.random() * k);
+        if (a === b) continue;
+        const A = comms[a].members, B = comms[b].members;
+        link(A[Math.floor(Math.random() * A.length)], B[Math.floor(Math.random() * B.length)], true);
+      }
+      nodes.forEach((n, i) => n.deg = adj[i].length);
+    }
+
+    function spawn(i, hops) {
+      const nb = adj[i];
+      if (!nb.length) return;
+      const j = nb[Math.floor(Math.random() * nb.length)];
+      pulses.push({ a: i, b: j, t: 0, speed: rand(.012, .026), hops, color: comms[nodes[j].c].color });
     }
 
     function step() {
-      comms.forEach(c => {
-        c.x += c.vx; c.y += c.vy;
-        if (c.x < W * .1 || c.x > W * .9) c.vx *= -1;
-        if (c.y < H * .1 || c.y > H * .9) c.vy *= -1;
-      });
-      nodes.forEach(n => {
-        const c = comms[n.c];
-        n.vx += (c.x - n.x) * .00004 + rand(-.01, .01);
-        n.vy += (c.y - n.y) * .00004 + rand(-.01, .01);
-        n.vx *= .995; n.vy *= .995;
-        const sp = Math.hypot(n.vx, n.vy);
-        if (sp > .45) { n.vx *= .45 / sp; n.vy *= .45 / sp; }
-        n.x += n.vx; n.y += n.vy;
-        if (n.x < 0 || n.x > W) n.vx *= -1;
-        if (n.y < 0 || n.y > H) n.vy *= -1;
-      });
+      t += 1;
+      place();
       for (let i = pulses.length - 1; i >= 0; i--) {
         const p = pulses[i];
         p.t += p.speed;
         if (p.t >= 1) {
           pulses.splice(i, 1);
-          if (p.hops > 0 && Math.random() < .7) spawnFrom(p.b, p.hops - 1, p.color);
+          if (p.hops > 0) spawn(p.b, p.hops - 1);
         }
       }
-      if (pulses.length < 6 && Math.random() < .03) {
-        const s = Math.floor(Math.random() * nodes.length);
-        spawnFrom(s, 3, comms[nodes[s].c].color);
-      }
-    }
-
-    function neighbours(i) {
-      const out = [], a = nodes[i];
-      for (let j = 0; j < nodes.length; j++) {
-        if (j === i) continue;
-        const b = nodes[j], dx = a.x - b.x, dy = a.y - b.y;
-        if (dx * dx + dy * dy < (a.c === b.c ? LINK2 : LINK2 * .45)) out.push(j);
-      }
-      return out;
-    }
-
-    function spawnFrom(i, hops, color) {
-      const nb = neighbours(i);
-      if (!nb.length) return;
-      const j = nb[Math.floor(Math.random() * nb.length)];
-      pulses.push({ a: i, b: j, t: 0, speed: rand(.008, .018), hops, color });
+      if (pulses.length < 18 && Math.random() < .08) spawn(Math.floor(Math.random() * nodes.length), 6);
     }
 
     function draw() {
       ctx.clearRect(0, 0, W, H);
-      nodes.forEach(n => n.deg = 0);
 
-      for (let i = 0; i < nodes.length; i++) {
-        const a = nodes[i];
-        for (let j = i + 1; j < nodes.length; j++) {
-          const b = nodes[j], dx = a.x - b.x, dy = a.y - b.y, d2 = dx * dx + dy * dy;
-          const same = a.c === b.c, lim = same ? LINK2 : LINK2 * .45;
-          if (d2 >= lim) continue;
-          a.deg++; b.deg++;
-          const alpha = (1 - d2 / lim) * (same ? .38 : .16);
-          ctx.strokeStyle = `rgba(${same ? comms[a.c].color : '100,116,139'},${alpha})`;
-          ctx.lineWidth = same ? .7 : .5;
-          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
-        }
-        if (mouse) {
-          const dx = a.x - mouse.x, dy = a.y - mouse.y, d2 = dx * dx + dy * dy;
-          if (d2 < 180 * 180) {
-            ctx.strokeStyle = `rgba(37,99,235,${(1 - d2 / 32400) * .5})`;
+      edges.forEach(e => {
+        const a = nodes[e.a], b = nodes[e.b];
+        ctx.strokeStyle = e.bridge ? 'rgba(100,116,139,.16)' : `rgba(${comms[a.c].color},.24)`;
+        ctx.lineWidth = e.bridge ? .6 : .8;
+        ctx.setLineDash(e.bridge ? [3, 4] : []);
+        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+      });
+      ctx.setLineDash([]);
+
+      if (mouse) {
+        nodes.forEach(n => {
+          const d2 = dist2(n, mouse);
+          if (d2 < 160 * 160) {
+            ctx.strokeStyle = `rgba(37,99,235,${(1 - d2 / 25600) * .3})`;
             ctx.lineWidth = .6;
-            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(n.x, n.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
           }
-        }
+        });
       }
 
       pulses.forEach(p => {
         const a = nodes[p.a], b = nodes[p.b];
         const x = a.x + (b.x - a.x) * p.t, y = a.y + (b.y - a.y) * p.t;
-        const g = ctx.createRadialGradient(x, y, 0, x, y, 7);
-        g.addColorStop(0, `rgba(${p.color},.9)`);
+        const g = ctx.createRadialGradient(x, y, 0, x, y, 6);
+        g.addColorStop(0, `rgba(${p.color},.75)`);
         g.addColorStop(1, `rgba(${p.color},0)`);
         ctx.fillStyle = g;
-        ctx.beginPath(); ctx.arc(x, y, 7, 0, Math.PI * 2); ctx.fill();
+        ctx.beginPath(); ctx.arc(x, y, 6, 0, TAU); ctx.fill();
       });
 
       nodes.forEach(n => {
-        const r = n.r + Math.min(n.deg, 8) * .25; /* hubs look bigger */
-        ctx.fillStyle = `rgba(${comms[n.c].color},.75)`;
-        ctx.beginPath(); ctx.arc(n.x, n.y, r, 0, Math.PI * 2); ctx.fill();
+        const r = n.r + Math.min(n.deg, 6) * .22 + .4 * Math.sin(t * .03 + n.ph); /* hubs look bigger, nodes breathe */
+        ctx.fillStyle = `rgba(${comms[n.c].color},.5)`;
+        ctx.beginPath(); ctx.arc(n.x, n.y, Math.max(r, .8), 0, TAU); ctx.fill();
       });
     }
 
