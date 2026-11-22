@@ -45,13 +45,19 @@ With colleagues at LARIM, I work on formal concept analysis, logical rule extrac
 <div class="card">
 <div class="card-icon">🩺</div>
 <h3>Health</h3>
-<p>Spatio-temporal health context modeling, risk prediction, and descriptors of post-COVID-19 conditions.</p>
+<p>Environmental determinants and modelling of schistosomiasis transmission, and spatio-temporal modeling for tropical vector-borne disease prediction using socio-environmental variables.</p>
 </div>
 
 <div class="card">
 <div class="card-icon">⚡</div>
 <h3>Energy &amp; Finance</h3>
 <p>Electricity load profiling and forecasting, and temporal dependencies in financial time series.</p>
+</div>
+
+<div class="card">
+<div class="card-icon">🎓</div>
+<h3>Education</h3>
+<p>Cognitive passport modeling to represent and follow learners' cognitive profiles.</p>
 </div>
 
 <div class="card">

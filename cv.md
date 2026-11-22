@@ -94,14 +94,23 @@ University of Yaoundé I, Cameroon · 2010–2011
 - Lassana Soumaré — UQO — 2025–2026 (completed)
 - Soukeynatou Samb Diop — UQO — 2025 (completed)
 
+**Undergraduate**
+- Megane Tresor Tambat — UQO — since May 2026
+
 Thesis topics are listed on the [Students]({{ '/students/' | relative_url }}) page.
 
 ## Research funding
 
 - **NSERC Discovery Grant** (Principal Investigator) — 2025–2030 — CAD $192,500<br>
   Context modeling and the analysis of dynamic complex systems through graph structures, temporal models, and survival analysis.
-- **Mitacs Globalink** (Principal Investigator) — 2026 — CAD $15,000<br>
+- **Mitacs Globalink** (Principal Investigator) — May–August 2026 — CAD $6,000<br>
   Modeling the sports context for event prediction.
+- **Mitacs Globalink** (Principal Investigator) — February–July 2027 — CAD $6,000<br>
+  Complex system modeling using GraphRAG, with an application to co-evolving time series.
+- **Mitacs Accelerate** (Principal Investigator) — Fall 2026 — 7 units — CAD $105,000 — with Hulotech<br>
+  Cognitive passport modeling in education.
+- **Mitacs Accelerate** (Principal Investigator) — Fall 2026 — 6 units — CAD $90,000 — with SOCODEVI<br>
+  Neuro-symbolic learning for semantic matching, applied to international development.
 - **IMC2 Call for Projects** (Co-Investigator) — 2026–2027 — CAD $72,000<br>
   Graph models for differentially private data analysis and the protection of information systems.
 
@@ -116,7 +125,6 @@ Collaborations with Prof. Rokia Missaoui and Prof. Nadia Baaziz on formal concep
 
 **Université Laval** · 2021–2023 — Postdoctoral Fellow
 - Graph structure representation for event prediction in georeferenced data.
-- Graph structure representation for identifying predictive descriptors of post-COVID-19 conditions from omics data.
 - Deep survival analysis for risk modeling.
 - Predicting the degeneration of substructures in evolving graphs.
 
