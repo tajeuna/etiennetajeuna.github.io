@@ -39,6 +39,24 @@
 
 - type: conference
   year: 2026
+  title: "Modeling Soccer Competitions as Evolving Temporal Networks of Match-Level Interactions"
+  authors: "E. Tajeuna, L. F. Kengni Pokam, F. Diouf, Y. A. Sangare"
+  venue: "Complex Networks 2026"
+
+- type: conference
+  year: 2026
+  title: "h-ABCD+o2: A Hypergraph Artificial Benchmark with Overlapping Communities and Outliers"
+  authors: "M. Waffo Kemgne, J.-L. Guillaume, E. Tajeuna, C. Demko, R. Missaoui, K. Bertet"
+  venue: "Complex Networks 2026"
+
+- type: conference
+  year: 2026
+  title: "Tridimensional Social Network Search and Clustering"
+  authors: "P. Ruas, M. Ibrahim, R. Missaoui, E. Tajeuna"
+  venue: "ASONAM 2026"
+
+- type: conference
+  year: 2026
   title: "Contextual Stance-Aware Semantic Graph Learning for Fake News Detection"
   authors: "D. Benchikh, M. S. Allili, E. Tajeuna"
   venue: "Canadian AI 2026"

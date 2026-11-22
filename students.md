@@ -11,6 +11,7 @@ permalink: /students/
 ### Doctoral
 - **Sabrina Mefo Fotso** (UQO, co-supervised with Prof. Luigi Logrippo) — *Prediction of information-induced partial order relations in complex systems*
 - **René Manassé Galekwa** (University of Klagenfurt, co-supervised with Dr. Jean Marie Tshimula and Prof. Kyamakya Kyandoghere) — *Enhancing diversification in sports betting: a machine learning perspective*
+- **Furel De Consol Teguimene** (UQO, co-supervised with Prof. Rokia Missaoui) — *Towards transparent and explainable graph representation learning: a neuro-symbolic and rule-formalization approach*
 - **Lorraine Madzontheu Tchio** (UCAC–ESS, co-supervised with Prof. Rokia Missaoui and Dr. Albert Bayebeki) — *Genital schistosomiasis and associated factors among Indigenous populations in the Congo Basin*
 
 ### Research master's

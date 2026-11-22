@@ -69,6 +69,7 @@ University of Yaoundé I, Cameroon · 2010–2011
 **Doctoral**
 - Sabrina Mefo Fotso — UQO, co-supervised with Prof. Luigi Logrippo — since 2026
 - René Manassé Galekwa — University of Klagenfurt, co-supervised with Dr. Jean Marie Tshimula and Prof. Kyamakya Kyandoghere — since 2024
+- Furel De Consol Teguimene — UQO, co-supervised with Prof. Rokia Missaoui — since 2026
 - Lorraine Madzontheu Tchio — UCAC–ESS, co-supervised with Prof. Rokia Missaoui and Dr. Albert Bayebeki — since 2024
 - Patrick Owusu Asante — Université de Sherbrooke, co-supervised with Prof. Armelle Brun and Prof. Shengrui Wang — 2022–2024 (completed)
 
