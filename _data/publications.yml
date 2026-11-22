@@ -166,6 +166,14 @@
 
 - type: preprint
   year: 2026
+  title: "CAARL: In-Context Learning for Interpretable Co-Evolving Time Series Forecasting"
+  authors: "E. Tajeuna, P. Asante Owusu, A. Brun, S. Wang"
+  venue: "arXiv"
+  url: "https://arxiv.org/abs/2604.18305"
+  link_label: "arXiv:2604.18305"
+
+- type: preprint
+  year: 2026
   title: "Capital Preservation in Sports-Betting Portfolios: A Calibrated, Risk-Aware Two-Stage Framework"
   authors: "K. Kyamakya, R. M. Galekwa, J. M. Tshimula, E. Tajeuna, S. K. Kasereka, J. C. Chedjou"
   venue: "SSRN"
