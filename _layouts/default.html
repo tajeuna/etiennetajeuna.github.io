@@ -15,20 +15,21 @@
 
     /* ── DESIGN TOKENS ──────────────────────────────────── */
     :root {
-      --bg:            #07090f;
-      --bg2:           #0c0f1a;
-      --surface:       #111420;
-      --surface2:      #171c2b;
-      --border:        #1e2438;
-      --border2:       #252d44;
-      --accent:        #c8963c;
-      --accent2:       #e2aa4a;
-      --accent-glow:   rgba(200,150,60,.18);
-      --accent-dim:    rgba(200,150,60,.08);
-      --text:          #ddd9d0;
-      --text-dim:      #9499b5;
-      --text-muted:    #585e7a;
-      --blue:          #5b9cf6;
+      --bg:            #eef2f6;
+      --bg2:           #e6ebf1;
+      --surface:       #ffffff;
+      --surface2:      #f6f8fb;
+      --border:        #d8dee8;
+      --border2:       #b9c4d4;
+      --accent:        #2563eb;
+      --accent2:       #1d4ed8;
+      --accent-glow:   rgba(37,99,235,.18);
+      --accent-dim:    rgba(37,99,235,.08);
+      --text:          #1e293b;
+      --heading:       #0f172a;
+      --text-dim:      #475569;
+      --text-muted:    #64748b;
+      --blue:          #2563eb;
       --serif:         'Cormorant Garamond', Georgia, serif;
       --sans:          'DM Sans', system-ui, sans-serif;
       --mono:          'DM Mono', 'Courier New', monospace;
@@ -53,7 +54,7 @@
     main { flex: 1; }
 
     a { color: var(--accent2); text-decoration: none; transition: color .2s; }
-    a:hover { color: #ffa; }
+    a:hover { color: #1e40af; }
     img { max-width: 100%; display: block; }
 
     /* ── NAVIGATION ─────────────────────────────────────── */
@@ -65,10 +66,10 @@
       display: flex;
       align-items: center;
       padding: 0 var(--px);
-      background: rgba(7,9,15,.88);
+      background: rgba(238,242,246,.88);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255,255,255,.04);
+      border-bottom: 1px solid var(--border);
     }
 
     .nav-brand {
@@ -139,7 +140,7 @@
       font-size: clamp(2.2rem,5vw,3.8rem);
       font-weight: 400;
       line-height: 1.08;
-      color: #fff;
+      color: var(--heading);
       letter-spacing: -.01em;
     }
     .page-hd .lead {
@@ -156,7 +157,7 @@
       font-family: var(--serif);
       font-size: 1.9rem;
       font-weight: 400;
-      color: #fff;
+      color: var(--heading);
       margin: 3rem 0 1.1rem;
       padding-bottom: .6rem;
       border-bottom: 1px solid var(--border);
@@ -213,7 +214,7 @@
     .prose strong { color: var(--text); font-weight: 500; }
     .prose em { font-style: italic; color: var(--text-dim); }
 
-    .prose a { border-bottom: 1px solid rgba(226,170,74,.35); }
+    .prose a { border-bottom: 1px solid rgba(37,99,235,.35); }
     .prose a:hover { border-bottom-color: var(--accent2); }
 
     .prose code {
@@ -254,7 +255,7 @@
     .card:hover {
       border-color: var(--border2);
       transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(0,0,0,.4);
+      box-shadow: 0 12px 40px rgba(15,23,42,.10);
     }
     .card:hover::before { opacity: 1; }
 
@@ -273,7 +274,7 @@
       font-family: var(--serif);
       font-size: 1.2rem;
       font-weight: 500;
-      color: #fff;
+      color: var(--heading);
       margin-bottom: .6rem;
       letter-spacing: .01em;
     }
@@ -335,7 +336,7 @@
       text-transform: uppercase;
       padding: .18em .65em;
       background: var(--accent-dim);
-      border: 1px solid rgba(200,150,60,.2);
+      border: 1px solid rgba(37,99,235,.2);
       border-radius: 2px;
       color: var(--accent);
     }
@@ -384,7 +385,7 @@
     /* ── INFO BOXES ─────────────────────────────────────── */
     .info-box {
       background: var(--accent-dim);
-      border: 1px solid rgba(200,150,60,.2);
+      border: 1px solid rgba(37,99,235,.2);
       border-left: 3px solid var(--accent);
       border-radius: 0 var(--radius) var(--radius) 0;
       padding: 1.25rem 1.5rem;
@@ -486,7 +487,7 @@
     if (!canvas || !canvas.getContext) return;
     const ctx = canvas.getContext('2d');
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const PALETTE = ['200,150,60', '91,156,246', '148,153,181', '226,170,74'];
+    const PALETTE = ['37,99,235', '14,165,233', '100,116,139', '99,102,241'];
     const LINK = 150, LINK2 = LINK * LINK;
     let W, H, dpr, nodes = [], comms = [], pulses = [], raf, mouse = null;
 
@@ -576,14 +577,14 @@
           if (d2 >= lim) continue;
           a.deg++; b.deg++;
           const alpha = (1 - d2 / lim) * (same ? .38 : .16);
-          ctx.strokeStyle = `rgba(${same ? comms[a.c].color : '148,153,181'},${alpha})`;
+          ctx.strokeStyle = `rgba(${same ? comms[a.c].color : '100,116,139'},${alpha})`;
           ctx.lineWidth = same ? .7 : .5;
           ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
         }
         if (mouse) {
           const dx = a.x - mouse.x, dy = a.y - mouse.y, d2 = dx * dx + dy * dy;
           if (d2 < 180 * 180) {
-            ctx.strokeStyle = `rgba(226,170,74,${(1 - d2 / 32400) * .5})`;
+            ctx.strokeStyle = `rgba(37,99,235,${(1 - d2 / 32400) * .5})`;
             ctx.lineWidth = .6;
             ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
           }

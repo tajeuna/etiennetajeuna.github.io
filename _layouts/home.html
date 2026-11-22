@@ -109,8 +109,8 @@ layout: default
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(30,36,60,.7) 0%, transparent 70%),
-              radial-gradient(ellipse 50% 80% at 20% 80%, rgba(20,14,6,.6) 0%, transparent 60%);
+  background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(37,99,235,.10) 0%, transparent 70%),
+              radial-gradient(ellipse 50% 80% at 20% 80%, rgba(14,165,233,.08) 0%, transparent 60%);
 }
 
 
@@ -147,7 +147,7 @@ layout: default
   height: auto;
   border-radius: var(--radius);
   border: 1px solid var(--border2);
-  box-shadow: 0 24px 64px rgba(0,0,0,.55), 0 0 0 6px var(--accent-dim);
+  box-shadow: 0 24px 64px rgba(15,23,42,.14), 0 0 0 6px var(--accent-dim);
 }
 
 .hero-eyebrow {
@@ -166,7 +166,7 @@ layout: default
   font-weight: 300;
   line-height: .95;
   letter-spacing: -.02em;
-  color: #fff;
+  color: var(--heading);
   margin-bottom: 2rem;
   animation: fadeUp .6s .08s ease both;
 }
@@ -197,8 +197,8 @@ layout: default
   letter-spacing: .08em;
   text-transform: uppercase;
   padding: .3em 1em;
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.09);
+  background: rgba(255,255,255,.7);
+  border: 1px solid var(--border);
   border-radius: 100px;
   color: var(--text-muted);
 }
@@ -232,7 +232,7 @@ layout: default
   display: inline-block;
   padding: .65em 1.75em;
   background: var(--accent);
-  color: #000;
+  color: #fff;
   font-size: .82rem;
   font-weight: 500;
   letter-spacing: .08em;
@@ -242,7 +242,7 @@ layout: default
 }
 .btn-primary:hover {
   background: var(--accent2);
-  color: #000;
+  color: #fff;
   transform: translateY(-1px);
   box-shadow: 0 8px 24px var(--accent-glow);
 }
@@ -266,7 +266,7 @@ layout: default
 
 /* ── HIGHLIGHTS ─────────────────────────── */
 .highlights {
-  background: rgba(12,15,26,.78);
+  background: rgba(255,255,255,.55);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -305,7 +305,7 @@ layout: default
 .hl-card:hover {
   border-color: var(--border2);
   transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(0,0,0,.5);
+  box-shadow: 0 16px 48px rgba(15,23,42,.10);
   color: inherit;
 }
 .hl-card:hover::before { opacity: 1; }
@@ -325,7 +325,7 @@ layout: default
   font-family: var(--serif);
   font-size: 1.18rem;
   font-weight: 500;
-  color: #fff;
+  color: var(--heading);
   margin-bottom: .55rem;
   letter-spacing: .01em;
 }
