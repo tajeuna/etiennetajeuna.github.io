@@ -1,2 +1,2 @@
-# etiennetajeuna.github.io
+# tajeuna.github.io
 Academic website of Étienne Tajeuna

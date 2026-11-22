@@ -1,7 +1,7 @@
 title: "Etienne Tajeuna"
 description: "Étienne Tajeuna, Professor of Computer Science at the Université du Québec en Outaouais. Research in graph representation learning, co-evolving time series, and survival analysis."
 url: "https://tajeuna.github.io"
-baseurl: "/etiennetajeuna.github.io"
+baseurl: ""
 
 author:
   name: "Etienne Tajeuna"
