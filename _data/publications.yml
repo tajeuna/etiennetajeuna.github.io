@@ -9,14 +9,6 @@
   doi: "10.1109/ACCESS.2026.3669489"
 
 - type: journal
-  year: 2025
-  title: "A Systematic Review of Machine Learning in Sports Betting: Techniques, Challenges, and Future Directions"
-  authors: "R. M. Galekwa, J. M. Tshimula, E. Tajeuna, K. Kyamakya"
-  venue: "European Journal of Sport Science"
-  url: "https://arxiv.org/abs/2410.21484"
-  link_label: "arXiv:2410.21484"
-
-- type: journal
   year: 2023
   title: "Modeling Regime Shifts in Multiple Time Series"
   authors: "E. Tajeuna, M. Bouguessa, S. Wang"
@@ -186,3 +178,11 @@
   venue: "arXiv"
   url: "https://arxiv.org/abs/2508.08954"
   link_label: "arXiv:2508.08954"
+
+- type: preprint
+  year: 2025
+  title: "A Systematic Review of Machine Learning in Sports Betting: Techniques, Challenges, and Future Directions"
+  authors: "R. M. Galekwa, J. M. Tshimula, E. Tajeuna, K. Kyamakya"
+  venue: "European Journal of Sport Science"
+  url: "https://arxiv.org/abs/2410.21484"
+  link_label: "arXiv:2410.21484"
