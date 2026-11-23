@@ -6,8 +6,12 @@ lead: Professor of Computer Science · Data Science and Machine Learning · Univ
 permalink: /cv/
 ---
 
-<div class="info-box">
+<div class="info-box cv-actions">
   <p>Contact: <a href="mailto:etiennegael.tajeuna@uqo.ca">etiennegael.tajeuna@uqo.ca</a></p>
+  <a class="btn-download" href="{{ '/assets/cv/Etienne_Tajeuna_CV.pdf' | relative_url }}" download>
+    <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 19h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Download CV (PDF)
+  </a>
 </div>
 
 ## Education

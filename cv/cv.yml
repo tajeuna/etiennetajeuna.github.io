@@ -1,0 +1,199 @@
+# Content of the downloadable PDF CV (assets/cv/Etienne_Tajeuna_CV.pdf).
+# Publications are read from _data/publications.yml, so they stay in sync with the website.
+# After editing, rebuild the PDF with:  python3 cv/build_cv.py
+
+name: "Étienne Gael Tajeuna"
+tagline: "Professor of Computer Science • Data Science and Machine Learning"
+contacts:
+  - { icon: mail, text: "etiennegael.tajeuna@uqo.ca", url: "mailto:etiennegael.tajeuna@uqo.ca" }
+  - { icon: web, text: "tajeuna.github.io", url: "https://tajeuna.github.io" }
+  - { icon: link, text: "linkedin.com/in/tajeuna", url: "https://www.linkedin.com/in/tajeuna/" }
+  - { icon: scholar, text: "Google Scholar", url: "https://scholar.google.com/citations?user=zM9JvdMAAAAJ" }
+
+education:
+  - degree: "Ph.D. in Computer Science – Data Mining / Machine Learning."
+    thesis: "Survival Analysis Model for Predicting the Evolution of Dynamic Graphs: Applications to Social Networks and Co-evolving Time Series"
+    place: "Université de Sherbrooke, Sherbrooke, Quebec, Canada."
+    date: "August 2015 - November 2020"
+  - degree: "M.Sc. in Computer Science – Data Mining / Machine Learning."
+    thesis: "Tracking Communities in Dynamic Social Networks"
+    place: "Université de Sherbrooke, Sherbrooke, Quebec, Canada."
+    date: "September 2013 - August 2015"
+  - degree: "Master’s in Computer Science – Computer Methods Applied to Business Management (MIAGE)."
+    place: "Université de Picardie Jules Verne, Amiens, France."
+    date: "January 2012 - February 2013"
+  - degree: "Bachelor’s Degree (Licence) in Computer Science."
+    place: "University of Yaoundé I, Yaoundé, Cameroon."
+    date: "October 2010 - September 2011"
+
+# Academic appointments and teaching ("Employment" in the template)
+employment:
+  - title: "Professor of Computer Science"
+    blocks:
+      - place: "Université du Québec en Outaouais (UQO)"
+        items:
+          - { text: "Director, Computer Science Program", date: "Since May 2026" }
+          - { text: "Professor of Computer Science", date: "Since Fall 2024" }
+          - text: "Courses taught:"
+            date: "Fall 2024 - present"
+            detail: "INF4163 (Database Techniques), INF5173 (Data Mining and Data Warehousing), INF1473 (Data Warehousing and Data Exploration), INF6243 (Learning Techniques), INF6253 (Semantic Web), INF6423 (Workshop in Cybersecurity and System Reliability), INF6083 (Special Topics – Recommender Systems)."
+      - place: "Université du Québec à Montréal (UQAM)"
+        items:
+          - { text: "Adjunct Professor", date: "Since April 2024" }
+  - title: "Postdoctoral Fellow"
+    blocks:
+      - place: "Université Laval"
+        items:
+          - text: "Postdoctoral Fellow in Machine Learning (supervisors: Prof. Pascal Germain and Prof. Jacques Corbeil)"
+            date: "2021 - 2023"
+  - title: "Lecturer"
+    blocks:
+      - place: "Université de Sherbrooke"
+        items:
+          - { text: "IFT-599/799 - Data Science", date: "Fall 2022, 2023" }
+          - text: "Teaching assistant: lab instructor and grader."
+            sub:
+              - { text: "IFT-187 Introduction to Relational Databases", date: "Fall 2015, 2016" }
+              - { text: "IFT-436 Algorithms and Data Structures", date: "Fall 2015" }
+              - { text: "IFT-501 Information Retrieval and Data Mining", date: "Fall 2014" }
+      - place: "McGill University, School of Continuing Studies"
+        items:
+          - { text: "YCNG 235 - Recommender Systems", date: "Summer 2023, 2024" }
+          - { text: "CCS2-505 - Programming for Data Science", date: "Fall 2022" }
+      - place: "Institute for Data Valorization (IVADO)"
+        items:
+          - text: "Instructor, 100 Days Data.Trek"
+            date: "Winter 2022"
+            sub:
+              - { text: "Introduction to the fundamentals of graph representation with R" }
+              - { text: "Python programming for machine learning" }
+
+supervision:
+  - level: "Doctoral Level"
+    students:
+      - { name: "Sabrina Mefo Fotso", where: "UQO", cosup: "Prof. Luigi Logrippo", date: "Since 2026", topic: "Prediction of Information-Induced Partial Order Relations in Complex Systems." }
+      - { name: "René Manassé Galekwa", where: "University of Klagenfurt (Austria)", cosup: "Dr. Jean Marie Tshimula and Prof. Kyamakya Kyandoghere", date: "Since 2024", topic: "Enhancing Diversification in Sports Betting: A Machine Learning Perspective." }
+      - { name: "Furel De Consol Teguimene", where: "UQO", cosup: "Prof. Rokia Missaoui", date: "Since 2026", topic: "Towards Transparent and Explainable Graph Representation Learning: A Neuro-Symbolic and Rule-Formalization Approach." }
+      - { name: "Lorraine Madzontheu Tchio", where: "UCAC–ESS (Cameroon)", cosup: "Prof. Rokia Missaoui and Dr. Albert Bayebeki", date: "Since 2024", topic: "Genital Schistosomiasis and Associated Factors among Indigenous Populations in the Congo Basin." }
+      - { name: "Patrick Owusu Asante", where: "Université de Sherbrooke", cosup: "Prof. Armelle Brun and Prof. Shengrui Wang", date: "2022 - 2024 (completed)", topic: "Dependency Modeling in Co-Evolving Time Series." }
+  - level: "Master’s Level"
+    groups:
+      - label: "Research Master’s"
+        students:
+          - { name: "Loïc Franklin Kengni Pokam", where: "UQO", date: "Since 2026", topic: "Modeling Temporal Dynamics and Survival Analysis in Evolving Graphs." }
+          - { name: "Constance Lambert-Tremblay", where: "UQO", date: "Since 2026", topic: "Explainable Semantic Matching of Heterogeneous Multilingual Indicators: A Neuro-Symbolic Approach." }
+          - { name: "Ibrahima Diaby Sory", where: "UQO", date: "Since 2026", topic: "Spatio-Temporal Modeling of the Health Context for Optimizing Resource Allocation." }
+          - { name: "Ahmed Fahmy Mohamed Fahmy", where: "UQAM", cosup: "Prof. Mohamed Bouguessa", date: "2022 - 2024 (completed)", topic: "Tracking User Sentiment Changes on Social Networks." }
+          - { name: "Florian Philippe", where: "Université Laval", cosup: "Prof. Thierry Badard", date: "2021 - 2022 (completed)", topic: "Geospatial Methods and Contextual Graph Enrichment in Insurance." }
+      - label: "Professional Master’s"
+        students:
+          - { name: "Sacko Sekou", where: "UQO", date: "Since 2026", topic: "Knowledge Graph Modeling for Predictive Analysis of Events in Soccer." }
+          - { name: "Mohamed Menasria", where: "UQO", date: "Since 2026", topic: "Identifying Logical Rules from Knowledge Graphs for Forecasting Co-Evolving Time Series." }
+          - { name: "Sarra Yasmine Bali", where: "UQO", date: "Since 2026", topic: "Forecasting Appeals Intake." }
+          - { name: "Balde Chaikou", where: "UQO", date: "Since 2026", topic: "A Graph-Based Approach to Predicting the Structure of Biomedical Ontologies." }
+          - { name: "Yvana Cyllia Dongfack Chewo", where: "UQO", date: "Since 2026", topic: "Leveraging the Proofs of Concept from the 2025 Hackathon." }
+          - { name: "Missier Elman Vicinth", where: "UQO", date: "Since 2025", topic: "Modeling the Evolution of Substructures in Dynamic Attributed Graphs." }
+          - { name: "Willy Herman Talabong Temgoua", where: "Polytechnique Montréal", cosup: "Prof. Tarek Ould-Bachir", date: "2025 (completed)", topic: "Graph-Based Contextual Modeling of Security Logs." }
+          - { name: "Djamila Benchikh", where: "UQO", cosup: "Prof. Mohand Said Allili", date: "2025 (completed)", topic: "Detecting Disinformation on Social Networks with Contextual Graphs." }
+          - { name: "Kabem Abdoul Charif Sankara", where: "UQO", date: "2025 (completed)", topic: "A Hospital IT Data Warehouse and Performance Analysis." }
+          - { name: "Ousmane Dieye", where: "UQO", date: "2024 - 2025 (completed)", topic: "Behavioral Analysis and Data Integration at Loto-Québec." }
+      - label: "Graduate Diploma (DESS)"
+        students:
+          - { name: "Zineddine Makhlouf", where: "UQO", cosup: "Prof. Nadia Baaziz", date: "Since 2025", topic: "Knowledge Graph Modeling of Textures for Content-Based Image Retrieval." }
+          - { name: "Fatou Diouf", where: "UQO", date: "Since 2025", topic: "A Social and Media Data Warehouse for Sentiment Analysis of Sports Activities." }
+          - { name: "Yaya Abdoul Sangare", where: "UQO", date: "Since 2025", topic: "From Collection to Prediction: An Analytics Pipeline for Soccer Performance." }
+          - { name: "Lassana Soumaré", where: "UQO", date: "2025 - 2026 (completed)", topic: "A Graph-Based Approach to Network Intrusion Detection." }
+          - { name: "Soukeynatou Samb Diop", where: "UQO", date: "2025 (completed)", topic: "Context Modeling for Selecting Autoregressive Models in Co-Evolving Time Series." }
+  - level: "Undergraduate Level"
+    students:
+      - { name: "Megane Tresor Tambat", where: "UQO", date: "Since May 2026", topic: "From Support Vectors to Frontier Nodes: A Margin Perspective on Node Classification." }
+
+funding:
+  - { title: "NSERC — Discovery Grant (Principal Investigator)", date: "2025 - 2030", desc: "Research program focused on context modeling and the analysis of dynamic complex systems through graph structures, temporal models, and survival analysis.", amount: "CAD $192,500." }
+  - { title: "Mitacs Globalink (Principal Investigator)", date: "May 2026 - August 2026", desc: "Modeling the sports context for event prediction.", amount: "CAD $6,000." }
+  - { title: "Mitacs Globalink (Principal Investigator)", date: "February 2027 - July 2027", desc: "Complex system modeling using GraphRAG, with an application to co-evolving time series.", amount: "CAD $6,000." }
+  - { title: "Mitacs Accelerate (Principal Investigator) — with Hulotech", date: "Fall 2026", desc: "Cognitive passport modeling in education.", amount: "7 units — CAD $105,000." }
+  - { title: "Mitacs Accelerate (Principal Investigator) — with SOCODEVI", date: "Fall 2026", desc: "Neuro-symbolic learning for semantic matching, applied to international development.", amount: "6 units — CAD $90,000." }
+  - { title: "IMC² Call for Projects (Co-Investigator)", date: "2026 - 2027", desc: "Graph models for differentially private data analysis and the protection of information systems.", amount: "CAD $72,000." }
+
+research:
+  - place: "Université du Québec en Outaouais, Gatineau, Quebec"
+    date: "Since 2025"
+    role: "LARIM research collaborations: Prof. Rokia Missaoui and Prof. Nadia Baaziz"
+    area: "Research areas:"
+    bullets_plain:
+      - "Formal concept analysis."
+      - "Logical rule extraction."
+      - "Knowledge graph modeling for image recognition."
+  - place: "Université de Sherbrooke, Quebec"
+    date: "January 2024 - May 2024"
+    role: "Research Assistant"
+    supervisor: "Supervisor: Prof. Shengrui Wang"
+    area: "Research area: building explainable models for identifying and predicting regimes in co-evolving time series."
+    bullets:
+      - { lead: "Modeling causal dependencies in co-evolving time series:", text: "given a set of synchronous time series, the goal of this work is to identify the influence relationships one series may have on another. By modeling the dependencies among the series at each time step, it becomes easier to predict their future values." }
+  - place: "Université de Sherbrooke, Quebec"
+    date: "January 2024 - May 2024"
+    role: "Research Assistant"
+    supervisor: "Supervisor: Prof. Djemel Ziou"
+    area: "Research topic: time series sampling through reinforcement learning."
+    bullets:
+      - { lead: "Reinforcement learning-assisted sampling for time series clustering:", text: "defining a model that automatically selects a representative subset of time series for clustering through a penalty/reward process rather than random selection." }
+  - place: "Université Laval, Quebec"
+    date: "January 2021 - December 2023"
+    role: "Postdoctoral Fellowship in Machine Learning"
+    supervisor: "Supervisor: Prof. Pascal Germain · Co-supervisor: Prof. Jacques Corbeil"
+    area: "Research area: deep learning based on graph structure representation."
+    bullets:
+      - { lead: "Graph structure representation for event prediction in georeferenced data:", text: "building a dynamic graph linking spatio-temporal activity to model the event context and predict event occurrences in space and time." }
+      - { lead: "Survival analysis for risk modeling (deep learning approach):", text: "developing a nonlinear deep approach to uncover relationships between risk factors and optimize the prediction of event occurrence risk." }
+      - { lead: "Predicting the degeneration of graph substructures in evolving graphs:", text: "a model capable of tracking the evolution of graph substructures and predicting their eventual disappearance." }
+
+service:
+  - "Associate Editor, <em>Neurocomputing</em> journal (Elsevier)."
+  - "Organizing Committee Member, ASONAM 2026 conference."
+  - "Review Committee Member, Fonds de recherche du Québec (FRQ)."
+  - "Reviewer (peer review) for international conferences and journals in machine learning and data mining."
+  - "Community partnership (NGO): SOCODEVI, through Mitacs programs."
+  - "Industry partnership with Hulotech through Mitacs programs."
+
+industry:
+  - company: "Intact Insurance"
+    role: "Applied Research Scientist"
+    bullets:
+      - "Modeling insured driver behavior in driving situations."
+      - "Spatio-temporal modeling to predict abnormal behavior of insured drivers."
+    place: "Montreal, Canada"
+    date: "2022 - 2023"
+  - company: "TouchTunes"
+    role: "Senior Data Scientist"
+    bullets:
+      - "Applying statistical and machine learning methods to address specific business needs."
+      - "Identifying patterns and anomalies in data and spotting optimization opportunities."
+    place: "Montreal, Canada"
+    date: "2022 - 2023"
+  - company: "Ciena"
+    role: "Data Scientist"
+    bullets:
+      - "Designing algorithms for automated data exploration."
+      - "Predicting early symptoms of failure in a production line."
+    place: "Ottawa, Canada"
+    date: "2020 - 2021"
+  - company: "SAP"
+    role: "Applied Research Scientist"
+    bullets:
+      - "Investigating customers’ electricity consumption profiles to uncover similar trends."
+      - "Proposing new approaches for forecasting customers’ electricity consumption."
+    place: "Montreal, Canada"
+    date: "2016 - 2018"
+  - company: "Canada Research Chair in Applied Epistemology"
+    role: "Data Engineer"
+    bullets:
+      - "Database cleaning and exploration."
+    place: "Sherbrooke, Canada"
+    date: "2016 - 2017"
+
+awards:
+  - { text: "Mitacs Elevate Fellowship (CAD $60,000).", date: "2020" }
+  - { text: "Mitacs Accelerate Fellowship (CAD $30,000).", date: "2020" }
+  - { text: "BMO Financial Group Academic Excellence Scholarship (CAD $2,000).", date: "2017" }

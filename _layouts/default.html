@@ -392,6 +392,33 @@
       margin: 1.5rem 0;
     }
     .info-box p { font-size: .92rem; color: var(--text-dim); margin: 0; }
+    .cv-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: .55em;
+      padding: .65em 1.5em;
+      background: var(--accent);
+      color: #fff;
+      font-size: .8rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      border-radius: 3px;
+      transition: background .2s, transform .15s, box-shadow .2s;
+    }
+    .btn-download:hover {
+      background: var(--accent2);
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px var(--accent-glow);
+    }
 
     /* ── FOOTER ─────────────────────────────────────────── */
     .footer {

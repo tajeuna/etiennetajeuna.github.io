@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ cv.name }} — Curriculum Vitae</title>
+<style>
+  @page {
+    size: letter;
+    margin: 0.85in 0.9in 0.8in 0.9in;
+    @top-center { content: ""; width: 100%; border-bottom: 0.6pt solid #000; margin-bottom: 0.2in; }
+    @bottom-right { content: "Page " counter(page) " of " counter(pages); font-family: "Latin Modern Roman", "LM Roman 10", serif; font-size: 9pt; }
+  }
+  :root { --head: #5b349a; --sub: #800080; --cal: #d12e2e; --muted: #555; --date-w: 14.2em; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Latin Modern Roman", "LM Roman 10", "CMU Serif", Georgia, serif; font-size: 10pt; line-height: 1.32; color: #000; background: #fff; }
+  a { color: inherit; text-decoration: none; }
+  em { font-style: italic; }
+  svg.i { width: 1.05em; height: 1.05em; vertical-align: -0.17em; margin-right: 0.3em; flex: none; }
+
+  header { text-align: center; margin-bottom: 1.2em; }
+  header h1 { font-size: 21pt; font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase; margin: 0.15em 0 0.5em; }
+  header .tag { font-size: 7.6pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; }
+  .contacts { margin-top: 0.7em; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.3em 1.6em; font-size: 9pt; font-weight: 700; }
+
+  h2 { color: var(--head); font-size: 11pt; font-weight: 400; text-transform: uppercase; letter-spacing: 0.04em; border-bottom: 0.6pt solid #000; padding-bottom: 0.15em; margin: 1.5em 0 0.6em; break-after: avoid; }
+  h3 { font-size: 10.5pt; font-weight: 700; margin: 0.7em 0 0.35em 0.4em; break-after: avoid; display: flex; align-items: center; }
+  h4 { font-size: 9.5pt; font-weight: 700; margin: 0.6em 0 0.4em 0.4em; break-after: avoid; }
+  h5 { font-size: 9.5pt; font-weight: 400; margin: 0.6em 0 0.35em 0.4em; break-after: avoid; }
+  .sec { padding-left: 0.4em; }
+
+  .row { display: grid; grid-template-columns: 1fr var(--date-w); column-gap: 1.6em; align-items: start; break-inside: avoid; }
+  .date { font-style: italic; font-size: 9pt; display: flex; align-items: flex-start; white-space: nowrap; }
+  .date svg { color: var(--cal); }
+  .place { display: flex; align-items: center; font-size: 9pt; color: #111; }
+  .place svg { color: #999; }
+  .place.ruled { border-bottom: 0.6pt solid #000; padding-bottom: 0.15em; margin-bottom: 0.35em; }
+  .sub { color: var(--sub); font-weight: 700; font-size: 8.8pt; }
+  .entry { break-inside: avoid; padding: 0.25em 0 0.55em; }
+  hr.dash { border: 0; border-top: 0.8pt dashed #000; margin: 0.55em 0; }
+  .deg { font-size: 10.5pt; font-weight: 700; display: flex; align-items: flex-start; margin-bottom: 0.15em; }
+  .deg svg { color: #b8860b; }
+
+  ul { list-style: none; }
+  ul.dot > li { position: relative; padding-left: 0.9em; margin: 0.12em 0; }
+  ul.dot > li::before { content: "•"; position: absolute; left: 0; }
+  ul.dash-l > li { position: relative; padding-left: 0.9em; margin: 0.1em 0; }
+  ul.dash-l > li::before { content: "–"; position: absolute; left: 0; }
+  ul.nest { margin-left: 0.9em; }
+  .detail { font-size: 9pt; text-align: justify; hyphens: auto; margin-top: 0.1em; }
+  .topic { font-size: 9pt; margin-top: 0.15em; display: flex; align-items: flex-start; }
+  .topic svg { color: var(--sub); }
+  .amount { margin-top: 0.3em; font-size: 9pt; }
+  .plain { color: var(--sub); font-weight: 700; font-size: 9pt; }
+  .research .bul { font-size: 9pt; text-align: justify; hyphens: auto; }
+  .research b { font-weight: 700; }
+
+  ol.pubs { padding-left: 1.6em; list-style: decimal; font-size: 9pt; text-align: justify; hyphens: auto; }
+  ol.pubs li { margin: 0 0 0.45em; padding-left: 0.2em; break-inside: avoid; }
+  .note { color: var(--sub); font-size: 9pt; }
+  .note a { font-family: "Latin Modern Mono", monospace; font-style: italic; color: #000; font-size: 8.5pt; }
+</style>
+</head>
+<body>
+{%- macro icon(name) -%}
+{%- if name == 'cal' -%}<svg class="i" viewBox="0 0 16 16"><rect x="1.5" y="2.5" width="13" height="12" rx="1" fill="#fff" stroke="currentColor"/><rect x="1.5" y="2.5" width="13" height="3" fill="currentColor"/><g fill="currentColor"><rect x="3.5" y="7" width="2" height="1.5"/><rect x="7" y="7" width="2" height="1.5"/><rect x="10.5" y="7" width="2" height="1.5"/><rect x="3.5" y="10" width="2" height="1.5"/><rect x="7" y="10" width="2" height="1.5"/><rect x="10.5" y="10" width="2" height="1.5"/></g><path d="M4.5 1v3M11.5 1v3" stroke="#333" stroke-width="1.2"/></svg>
+{%- elif name == 'pin' -%}<svg class="i" viewBox="0 0 16 16"><path d="M8 15s-4.5-5-4.5-8.3a4.5 4.5 0 0 1 9 0C12.5 10 8 15 8 15z" fill="none" stroke="currentColor"/><circle cx="8" cy="6.6" r="1.6" fill="none" stroke="currentColor"/></svg>
+{%- elif name == 'cap' -%}<svg class="i" viewBox="0 0 16 16"><rect x="1" y="3" width="13" height="9" rx="1" fill="#fbe9b7" stroke="currentColor"/><path d="M3 6h7M3 8.5h5" stroke="#8a6d1f"/><circle cx="12" cy="11" r="2.2" fill="#d12e2e"/><path d="M11 12.8l-.6 2.4 1.6-.9 1.6.9-.6-2.4" fill="#d12e2e"/></svg>
+{%- elif name == 'person' -%}<svg class="i" viewBox="0 0 16 16"><circle cx="8" cy="4.5" r="3" fill="#e0a96d" stroke="#6b4423"/><path d="M2 15c0-3.6 2.7-5.5 6-5.5s6 1.9 6 5.5z" fill="#3b5998" stroke="#22375e"/></svg>
+{%- elif name == 'board' -%}<svg class="i" viewBox="0 0 16 16"><rect x="1" y="2" width="14" height="9" fill="#fff" stroke="#333"/><path d="M3 5h6M3 7.5h4" stroke="#333"/><path d="M5 11l-2 4M11 11l2 4" stroke="#333"/></svg>
+{%- elif name == 'gear' -%}<svg class="i" viewBox="0 0 16 16"><circle cx="8" cy="8" r="5" fill="#9bc0a0" stroke="#2f5d3a"/><circle cx="8" cy="8" r="2" fill="#fff" stroke="#2f5d3a"/></svg>
+{%- elif name == 'topic' -%}<svg class="i" viewBox="0 0 16 16"><rect x="1" y="1" width="14" height="14" rx="2" fill="#e8d3ef" stroke="currentColor"/><circle cx="8" cy="6" r="2.4" fill="#e0a96d"/><path d="M3.5 14c0-3 2-4.5 4.5-4.5s4.5 1.5 4.5 4.5" fill="#d12e2e"/></svg>
+{%- elif name == 'trophy' -%}<svg class="i" viewBox="0 0 16 16"><path d="M4 1.5h8v4a4 4 0 0 1-8 0z" fill="#e8b923" stroke="#8a6d1f"/><path d="M4 3H1.8c0 2 1 3 2.4 3M12 3h2.2c0 2-1 3-2.4 3" fill="none" stroke="#8a6d1f"/><path d="M8 9.5v3M5 14.5h6" stroke="#8a6d1f" stroke-width="1.6"/></svg>
+{%- elif name == 'mail' -%}<svg class="i" viewBox="0 0 16 16"><rect x="1" y="3" width="14" height="10" fill="#cfe3f7" stroke="#2655a4"/><path d="M1 3l7 5.5L15 3" fill="none" stroke="#2655a4"/></svg>
+{%- elif name == 'web' -%}<svg class="i" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.5" fill="none" stroke="#2655a4"/><path d="M1.5 8h13M8 1.5c-3 3.5-3 9.5 0 13M8 1.5c3 3.5 3 9.5 0 13" fill="none" stroke="#2655a4"/></svg>
+{%- elif name == 'link' -%}<svg class="i" viewBox="0 0 16 16"><rect x="1" y="1" width="14" height="14" rx="2" fill="#2655a4"/><path d="M4.5 6.5v5M4.5 4.2v.1M7.5 11.5v-5M7.5 8.5c0-2 3.8-2.6 3.8 0v3" stroke="#fff" stroke-width="1.5" fill="none"/></svg>
+{%- elif name == 'scholar' -%}<svg class="i" viewBox="0 0 16 16"><path d="M8 1L1 6l7 5 7-5z" fill="#2655a4"/><circle cx="8" cy="11" r="3.3" fill="#5b8bd6"/></svg>
+{%- endif -%}
+{%- endmacro -%}
+{%- macro date(d) -%}{% if d %}<div class="date">{{ icon('cal') }}<span>{{ d }}</span></div>{% else %}<div></div>{% endif %}{%- endmacro -%}
+
+<header>
+  <h1>{{ cv.name }}</h1>
+  <div class="tag">{{ cv.tagline }}</div>
+  <div class="contacts">
+    {% for c in cv.contacts %}<a href="{{ c.url }}">{{ icon(c.icon) }}{{ c.text }}</a>{% endfor %}
+  </div>
+</header>
+
+<h2>Education and Qualifications</h2>
+<div class="sec">
+{% for e in cv.education %}
+  {% if not loop.first %}<hr class="dash">{% endif %}
+  <div class="entry">
+    <div class="deg">{{ icon('cap') }}<span>{{ e.degree }}</span></div>
+    {% if e.thesis %}<div class="sub" style="margin-left:1.4em">{{ e.thesis }}</div>{% endif %}
+    <div class="row" style="margin-top:.35em">
+      <div class="place" style="margin-left:1.2em">{{ icon('pin') }}{{ e.place }}</div>
+      {{ date(e.date) }}
+    </div>
+  </div>
+{% endfor %}
+</div>
+
+<h2>Employment</h2>
+<div class="sec">
+{% for job in cv.employment %}
+  {% if not loop.first %}<hr class="dash">{% endif %}
+  <h3>{{ icon('board' if job.title == 'Lecturer' else 'person') }}{{ job.title }}</h3>
+  {% for b in job.blocks %}
+  <div class="entry">
+    <div class="row"><div class="place ruled">{{ icon('pin') }}{{ b.place }}</div><div></div></div>
+    {% for it in b['items'] %}
+    <div class="row" style="margin:.12em 0">
+      <div>
+        <ul class="dot"><li>{{ it.text }}
+          {% if it.detail %}<div class="detail">{{ it.detail }}</div>{% endif %}
+        </li></ul>
+      </div>
+      {{ date(it.date) }}
+    </div>
+    {% for s in it.sub or [] %}
+    <div class="row" style="margin:.08em 0">
+      <ul class="{{ 'dash-l' if s.date else 'dot' }} nest"><li>{{ s.text }}</li></ul>
+      {{ date(s.date) }}
+    </div>
+    {% endfor %}
+    {% endfor %}
+  </div>
+  {% endfor %}
+{% endfor %}
+</div>
+
+<h2>Student Supervision</h2>
+<div class="sec">
+{%- macro student(s) -%}
+  <div class="row entry" style="padding:.2em 0 .45em">
+    <div>
+      <ul class="dot"><li>{{ s.name }} — {{ s.where }}.{% if s.cosup %} Co-supervised with {{ s.cosup }}.{% endif %}</li></ul>
+      <div class="topic" style="margin-left:.9em">{{ icon('topic') }}<span>Topic: <em>{{ s.topic }}</em></span></div>
+    </div>
+    {{ date(s.date) }}
+  </div>
+{%- endmacro -%}
+{% for lvl in cv.supervision %}
+  {% if not loop.first %}<hr class="dash">{% endif %}
+  <h4>{{ lvl.level }}</h4>
+  {% for s in lvl.students or [] %}{{ student(s) }}{% endfor %}
+  {% for g in lvl.groups or [] %}
+    <h5>– {{ g.label }}</h5>
+    {% for s in g.students %}{{ student(s) }}{% endfor %}
+  {% endfor %}
+{% endfor %}
+</div>
+
+<h2>Research and Funding</h2>
+<div class="sec">
+  <h3>{{ icon('gear') }}Programs and Grants</h3>
+  {% for f in cv.funding %}
+  <div class="entry">
+    <div class="row"><div class="place ruled">{{ icon('pin') }}{{ f.title }}</div>{{ date(f.date) }}</div>
+    <div class="topic" style="padding-right:calc(var(--date-w) + 1.6em)">{{ icon('topic') }}<span>{{ f.desc }}</span></div>
+    <ul class="dot amount"><li>{{ f.amount }}</li></ul>
+  </div>
+  {% endfor %}
+  <hr class="dash">
+  <h3>{{ icon('gear') }}Laboratory Research</h3>
+  <div class="research">
+  {% for r in cv.research %}
+  <div class="entry">
+    <div class="row"><div class="place ruled">{{ icon('pin') }}{{ r.place }}</div>{{ date(r.date) }}</div>
+    <div style="font-weight:700;font-size:9.5pt;margin-top:.3em">{{ r.role }}</div>
+    {% if r.supervisor %}<div style="font-weight:700;font-size:9.5pt">{{ r.supervisor }}</div>{% endif %}
+    <div class="plain">{{ r.area }}</div>
+    {% for p in r.bullets_plain or [] %}<div class="plain">- {{ p }}</div>{% endfor %}
+    {% if r.bullets %}<ul class="dot bul" style="margin:.3em 0 0 1em">{% for b in r.bullets %}<li><b>{{ b.lead }}</b> {{ b.text }}</li>{% endfor %}</ul>{% endif %}
+  </div>
+  {% endfor %}
+  </div>
+</div>
+
+<h2>Service and Peer Review</h2>
+<div class="sec">
+  <ul class="dot" style="margin-left:1em">{% for s in cv.service %}<li>{{ s }}</li>{% endfor %}</ul>
+</div>
+
+<h2>Industry Experience</h2>
+<div class="sec">
+{% for j in cv.industry %}
+  {% if not loop.first %}<hr class="dash">{% endif %}
+  <div class="entry">
+    <div style="font-weight:700">{{ j.company }}</div>
+    <div style="font-weight:700">{{ j.role }}</div>
+    <ul class="dot" style="margin-left:.6em;padding-right:calc(var(--date-w) + 1.6em)">{% for b in j.bullets %}<li>{{ b }}</li>{% endfor %}</ul>
+    <div class="row" style="margin-top:.35em"><div class="place">{{ icon('pin') }}{{ j.place }}</div>{{ date(j.date) }}</div>
+  </div>
+{% endfor %}
+</div>
+
+<h2>Awards and Honors</h2>
+<div class="sec">
+{% for a in cv.awards %}
+  <div class="row" style="margin:.15em 0"><div class="deg" style="font-size:10pt">{{ icon('trophy') }}<span>{{ a.text }}</span></div>{{ date(a.date) }}</div>
+{% endfor %}
+</div>
+
+<h2>Publications</h2>
+<div class="sec">
+  <p class="note">For citation metrics and a complete list, see:<br><a href="{{ scholar }}">{{ scholar }}</a></p>
+  {% for key, label in [('journal', 'Journals'), ('conference', 'Conferences'), ('preprint', 'Preprints')] %}
+    {% if not loop.first %}<hr class="dash">{% endif %}
+    <h4>{{ label }}</h4>
+    <ol class="pubs">
+    {% for p in pubs if p.type == key %}
+      <li>{{ p.authors_html }}{% if p.authors_html %}, {% endif %}“{{ p.title }},” <em>{{ p.venue }}</em>, {{ p.year }}.{% if p.doi %} <a href="https://doi.org/{{ p.doi }}">doi:{{ p.doi }}</a>{% elif p.url %} <a href="{{ p.url }}">{{ p.link_label or p.url }}</a>{% endif %}</li>
+    {% endfor %}
+    </ol>
+  {% endfor %}
+</div>
+</body>
+</html>

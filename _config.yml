@@ -26,6 +26,10 @@ exclude:
   - MyProfile.jpeg
   - MyProfile2.jpeg
   - CV_Etienne.pdf
+  - cv/cv.yml
+  - cv/template.html.j2
+  - cv/build_cv.py
+  - cv/cv-preview.html
 
 markdown: kramdown
 kramdown:
